@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --cream: #F5F0E8;
+  --green-deep: #1A3A2A;
+  --gold: #B8962E;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F5F0E8;
+  color: #1A3A2A;
+  font-family: var(--font-roboto-mono), 'Hiragino Kaku Gothic ProN', 'Hiragino Sans',
+    'Meiryo', 'Yu Gothic', ui-monospace, monospace;
+}
+
+::selection {
+  background-color: #B8962E;
+  color: #F5F0E8;
+}
