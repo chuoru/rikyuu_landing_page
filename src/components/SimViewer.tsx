@@ -25,7 +25,7 @@ const MESH_MANIFEST: [string, string][] = [
 ];
 
 const SCENES = [
-  { id: 'starrobox_cafe', label: 'Starrobox Café', xml: '/starrobox/starrobox_cafe_web.xml' },
+  { id: 'starrobox_cafe', label: 'ワインボックス', xml: '/starrobox/starrobox_cafe_web.xml' },
 ];
 
 // Initial joint positions (radians). Press P in the viewer to log live qpos.

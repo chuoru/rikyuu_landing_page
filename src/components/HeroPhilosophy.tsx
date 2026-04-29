@@ -87,6 +87,15 @@ export default function HeroPhilosophy() {
       if (visualRef.current) {
         const steamEls = Array.from(visualRef.current.querySelectorAll('[data-steam]'));
         pin.to(steamEls, { attr: { stroke: '#1A3A2A' }, duration: 0.65 }, 0);
+
+        // Robot arm + hishaku fade in together with philosophy content
+        const robotEl = visualRef.current.querySelector('[data-robot]');
+        if (robotEl) {
+          pin.fromTo(robotEl,
+            { opacity: 0, y: 20 },
+            { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out' },
+            0.3);
+        }
       }
     }, sectionRef);
 
@@ -209,6 +218,36 @@ export default function HeroPhilosophy() {
             <ellipse cx="70" cy="331" rx="37" ry="9" stroke="#B8962E" strokeWidth="1.2"/>
           </g>
 
+          {/* Robot arm + hishaku — hidden until philosophy scroll */}
+          <g data-robot style={{ opacity: 0 }}>
+            {/* Mount plate */}
+            <rect x="238" y="8" width="40" height="12" rx="3" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
+            <line x1="258" y1="20" x2="258" y2="28" stroke="#B8962E" strokeWidth="1.5"/>
+            {/* Shoulder joint */}
+            <circle cx="258" cy="36" r="8" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
+            {/* Upper arm — two parallel lines */}
+            <line x1="261" y1="45" x2="241" y2="111" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="255" y1="43" x2="235" y2="109" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* Elbow joint */}
+            <circle cx="236" cy="116" r="6.5" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
+            {/* Forearm — two parallel lines */}
+            <line x1="234" y1="122" x2="208" y2="160" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="230" y1="120" x2="204" y2="157" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* Wrist joint */}
+            <circle cx="202" cy="165" r="8" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
+            {/* Hishaku handle — parallel lines with end cap */}
+            <line x1="257" y1="193" x2="128" y2="118" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="254" y1="199" x2="125" y2="124" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* Handle end cap */}
+            <line x1="257" y1="193" x2="254" y2="199" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* Hishaku bowl (柄杓) — rx=42 (~80% cup), rotated 30° */}
+            <g transform="rotate(30, 90, 100)">
+              <ellipse cx="90" cy="86" rx="42" ry="14" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
+              <line x1="48" y1="86" x2="48" y2="114" stroke="#B8962E" strokeWidth="1.5"/>
+              <line x1="132" y1="86" x2="132" y2="114" stroke="#B8962E" strokeWidth="1.5"/>
+              <path d="M 132 114 A 42 14 0 0 1 48 114" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
+            </g>
+          </g>
 
         </svg>
       </div>
