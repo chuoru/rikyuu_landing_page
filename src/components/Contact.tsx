@@ -81,7 +81,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-14 md:gap-20 items-start">
           {/* Left */}
           <FadeInSection delay={80}>
-            <h2 className="text-green-deep font-light leading-tight mb-5 text-4xl md:text-5xl tracking-widest">
+            <h2 className="text-green-deep font-light leading-tight mb-5 text-4xl md:text-5xl tracking-widest whitespace-nowrap">
               {c.heading}
             </h2>
             <div className="w-8 h-px bg-gold mb-6" />
