@@ -100,7 +100,7 @@ export default function Product() {
     <section id="product" data-nav-bg="#1A3A2A" className="flex flex-col md:flex-row h-auto md:h-screen bg-green-deep">
 
       {/* Left — 30% capabilities panel */}
-      <FadeInSection className="md:w-[30%] w-full flex flex-col justify-between px-8 py-16 md:px-10 md:py-20 border-b md:border-b-0 md:border-r border-cream/10">
+      <FadeInSection className="order-2 md:order-1 md:w-[30%] w-full flex flex-col justify-between px-8 py-16 md:px-10 md:py-20 md:border-r border-cream/10">
 
         {/* Top: label + name */}
         <div>
@@ -151,7 +151,7 @@ export default function Product() {
       </FadeInSection>
 
       {/* Right — 70% simulation viewer */}
-      <div className="md:w-[70%] w-full aspect-video md:aspect-auto relative">
+      <div className="order-1 md:order-2 md:w-[70%] w-full aspect-video md:aspect-auto relative border-b md:border-b-0 border-cream/10">
         <SimViewer className="absolute inset-0 w-full h-full" />
       </div>
 

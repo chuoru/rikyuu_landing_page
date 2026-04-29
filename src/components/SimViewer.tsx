@@ -353,10 +353,10 @@ export default function SimViewer({ className }: SimViewerProps) {
 
       {/* ── Control panel ── */}
       {status === 'ready' && (
-        <div className="absolute top-0 right-0 bottom-0 w-52 flex flex-col bg-[#081510]/92 backdrop-blur-md border-l border-cream/10">
+        <div className="absolute top-0 right-0 bottom-0 w-36 md:w-52 flex flex-col bg-[#081510]/92 backdrop-blur-md border-l border-cream/10">
 
           {/* Scene selector */}
-          <div className="px-4 pt-4 pb-3 border-b border-cream/10 flex-shrink-0">
+          <div className="px-2 pt-3 pb-2 md:px-4 md:pt-4 md:pb-3 border-b border-cream/10 flex-shrink-0">
             <span className="text-cream/30 text-[8px] tracking-[0.3em] uppercase font-mono block mb-2">
               Scene
             </span>
@@ -377,7 +377,7 @@ export default function SimViewer({ className }: SimViewerProps) {
           </div>
 
           {/* Joints header */}
-          <div className="px-4 py-2.5 border-b border-cream/10 flex-shrink-0 flex items-center justify-between">
+          <div className="px-2 py-1.5 md:px-4 md:py-2.5 border-b border-cream/10 flex-shrink-0 flex items-center justify-between">
             <span className="text-cream/30 text-[8px] tracking-[0.3em] uppercase font-mono">Joints</span>
             <button
               onClick={handleReset}
@@ -388,7 +388,7 @@ export default function SimViewer({ className }: SimViewerProps) {
           </div>
 
           {/* Joint sliders */}
-          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-5" style={{ scrollbarWidth: 'none' }}>
+          <div className="flex-1 overflow-y-auto px-2 py-2 space-y-3 md:px-4 md:py-3 md:space-y-5" style={{ scrollbarWidth: 'none' }}>
             {jointMeta.length === 0 && (
               <p className="text-cream/20 text-[9px] font-mono text-center pt-6">No joints found</p>
             )}
@@ -400,7 +400,7 @@ export default function SimViewer({ className }: SimViewerProps) {
               return (
                 <div key={j.name}>
                   <div className="flex justify-between items-baseline mb-1.5">
-                    <span className="text-cream/35 text-[8px] tracking-[0.08em] uppercase font-mono truncate mr-2 max-w-[110px]">
+                    <span className="text-cream/35 text-[8px] tracking-[0.08em] uppercase font-mono truncate mr-2 max-w-[68px] md:max-w-[110px]">
                       {j.name.replace(/_/g, ' ')}
                     </span>
                     <span className="text-gold text-[9px] font-mono tabular-nums flex-shrink-0">
@@ -439,7 +439,7 @@ export default function SimViewer({ className }: SimViewerProps) {
           </div>
 
           {/* Footer hint */}
-          <div className="px-4 py-2.5 border-t border-cream/10 flex-shrink-0">
+          <div className="px-2 py-1.5 md:px-4 md:py-2.5 border-t border-cream/10 flex-shrink-0">
             <p className="text-cream/15 text-[7px] tracking-[0.2em] font-mono uppercase">
               Press P · log qpos
             </p>

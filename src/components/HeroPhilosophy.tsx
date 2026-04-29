@@ -186,7 +186,7 @@ export default function HeroPhilosophy() {
             <div key={i} className="overflow-hidden">
               <p
                 data-philo
-                className="font-light leading-[1.15] tracking-tight text-[4.5vw] md:text-[3vw] lg:text-[2.2vw] text-green-deep text-justify [text-align-last:justify]"
+                className="font-light leading-[1.15] tracking-tight text-[4.5vw] md:text-[3vw] lg:text-[2.2vw] text-green-deep text-justify [text-align-last:left]"
                 dangerouslySetInnerHTML={{ __html: line }}
               />
             </div>
@@ -197,7 +197,7 @@ export default function HeroPhilosophy() {
       {/* ── Right visual: wabi-cha cup + robot arm ── */}
       <div
         ref={visualRef}
-        className="absolute inset-y-0 right-0 hidden md:flex items-start justify-center pt-16 w-[45%] pointer-events-none"
+        className="absolute inset-y-0 right-0 flex items-start justify-center pt-8 md:pt-16 w-[65%] md:w-[45%] pointer-events-none"
       >
         <svg viewBox="-20 0 320 400" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-sm h-auto">
 
@@ -222,27 +222,30 @@ export default function HeroPhilosophy() {
           <g data-robot style={{ opacity: 0 }}>
             {/* Mount plate */}
             <rect x="238" y="8" width="40" height="12" rx="3" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
-            <line x1="258" y1="20" x2="258" y2="28" stroke="#B8962E" strokeWidth="1.5"/>
+            {/* Base connector — two parallel lines from plate to shoulder */}
+            <line x1="261" y1="20" x2="261" y2="28" stroke="#B8962E" strokeWidth="1.5"/>
+            <line x1="255" y1="20" x2="255" y2="28" stroke="#B8962E" strokeWidth="1.5"/>
             {/* Shoulder joint */}
             <circle cx="258" cy="36" r="8" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
-            {/* Upper arm — two parallel lines */}
-            <line x1="261" y1="45" x2="241" y2="111" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
-            <line x1="255" y1="43" x2="235" y2="109" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* Upper arm — two parallel lines touching shoulder and elbow boundaries */}
+            <line x1="259" y1="45" x2="241" y2="109" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="253" y1="43" x2="235" y2="107" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
             {/* Elbow joint */}
-            <circle cx="236" cy="116" r="6.5" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
-            {/* Forearm — two parallel lines */}
-            <line x1="234" y1="122" x2="208" y2="160" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
-            <line x1="230" y1="120" x2="204" y2="157" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
-            {/* Wrist joint */}
-            <circle cx="202" cy="165" r="8" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
+            <circle cx="236" cy="116" r="8" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
+            {/* Forearm — two parallel lines touching elbow and wrist boundaries */}
+            <line x1="234" y1="125" x2="210" y2="160" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            <line x1="229" y1="121" x2="205" y2="156" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
             {/* Hishaku handle — parallel lines with end cap */}
             <line x1="257" y1="193" x2="128" y2="118" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
             <line x1="254" y1="199" x2="125" y2="124" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
-            {/* Handle end cap */}
-            <line x1="257" y1="193" x2="254" y2="199" stroke="#B8962E" strokeWidth="1.5" strokeLinecap="round"/>
+            {/* Handle end cap — outward arc + subtle fill for 3D cylindrical face */}
+            <path d="M 257 193 A 4 4 0 0 1 254 199" stroke="#B8962E" strokeWidth="1.5" fill="#B8962E" fillOpacity="0.18"/>
+            {/* Wrist joint — drawn after handle so it appears on top */}
+            <circle cx="202" cy="165" r="8" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
             {/* Hishaku bowl (柄杓) — rx=42 (~80% cup), rotated 30° */}
             <g transform="rotate(30, 90, 100)">
               <ellipse cx="90" cy="86" rx="42" ry="14" stroke="#B8962E" strokeWidth="1.5" fill="none"/>
+              <ellipse cx="90" cy="88" rx="36" ry="11" stroke="#B8962E" strokeWidth="1" fill="none"/>
               <line x1="48" y1="86" x2="48" y2="114" stroke="#B8962E" strokeWidth="1.5"/>
               <line x1="132" y1="86" x2="132" y2="114" stroke="#B8962E" strokeWidth="1.5"/>
               <path d="M 132 114 A 42 14 0 0 1 48 114" stroke="#B8962E" strokeWidth="1.5" fill="none"/>

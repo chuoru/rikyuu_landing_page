@@ -18,8 +18,8 @@ export default function Footer() {
           {/* Copyright */}
           <p className="text-cream/30 text-xs tracking-widest text-center">
             {lang === 'ja'
-              ? '© 2025 株式会社利休 All rights reserved.'
-              : '© 2025 Rikyu Co., Ltd. All rights reserved.'}
+              ? '© 2026 株式会社利休 All rights reserved.'
+              : '© 2026 Rikyu Co., Ltd. All rights reserved.'}
           </p>
 
           {/* Back to top */}
