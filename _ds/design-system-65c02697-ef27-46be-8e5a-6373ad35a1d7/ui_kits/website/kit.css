@@ -1,0 +1,151 @@
+/* ============================================================
+   Rikyu Robotics — Website UI kit styles
+   Pairs with ../../colors_and_type.css (load that first).
+   ============================================================ */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--green-deep); }
+
+.rk-app {
+  font-family: var(--font-base);
+  background: var(--cream);
+  color: var(--green-deep);
+  height: 100vh;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- shared atoms ---- */
+.rk-tick { display: block; width: 32px; height: 1px; background: var(--gold); flex-shrink: 0; }
+.rk-label-row { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+.rk-label { color: var(--gold); letter-spacing: 0.4em; font-size: 12px; text-transform: uppercase; }
+.rk-label-eyebrow { color: var(--gold); letter-spacing: 0.35em; font-size: 10px; text-transform: uppercase; display: block; margin-bottom: 32px; }
+.rk-badge { font-size: 12px; letter-spacing: 0.3em; border: 1px solid var(--accent-soft); color: rgba(184,150,46,0.7); padding: 5px 14px; }
+
+.rk-reveal { opacity: 0; transform: translateY(40px); transition: opacity 1s ease-out, transform 1s ease-out; }
+.rk-reveal.rk-in { opacity: 1; transform: translateY(0); }
+
+/* ============================ NAV ============================ */
+.rk-nav { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid; transition: background-color .12s, border-color .12s; }
+.rk-nav-inner { max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; }
+.rk-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.rk-mark { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; }
+.rk-wm { letter-spacing: 0.2em; font-size: 14px; font-weight: 500; transition: color .12s; }
+.rk-wm-en { color: var(--gold); letter-spacing: 0.3em; font-size: 11px; font-weight: 300; margin-left: 8px; }
+.rk-nav-links { display: flex; align-items: center; gap: 40px; }
+.rk-nav-link { font-size: 13px; letter-spacing: 0.12em; text-decoration: none; transition: color .15s; }
+.rk-nav-link:hover { color: var(--gold) !important; }
+.rk-toggle { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.3em; border: 1px solid rgba(184,150,46,0.6); color: var(--gold); background: transparent; padding: 7px 16px; cursor: pointer; transition: all .2s; }
+.rk-toggle:hover { background: var(--gold); color: var(--cream); }
+.rk-nav-mobile { display: none; align-items: center; gap: 12px; }
+.rk-burger { background: none; border: none; cursor: pointer; padding: 4px; }
+.rk-nav-dropdown { max-height: 0; overflow: hidden; transition: max-height .3s; }
+.rk-nav-dropdown.open { max-height: 240px; }
+.rk-drop-link { display: block; padding: 14px 40px; font-size: 14px; letter-spacing: 0.1em; text-decoration: none; border-bottom: 1px solid; }
+
+/* ============================ HERO ============================ */
+.rk-hero { position: relative; min-height: 100vh; background: var(--green-deep); display: flex; flex-direction: column; justify-content: center; overflow: hidden; padding: 120px 0; }
+.rk-scanlines { position: absolute; inset: 0; pointer-events: none; }
+.rk-line { position: absolute; left: 0; right: 0; height: 1px; }
+.rk-hero-glow { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(circle at 50% 50%, rgba(184,150,46,0.14) 0%, rgba(184,150,46,0.05) 45%, transparent 70%); }
+.rk-tea { position: absolute; top: 80px; right: 4%; width: 38%; max-width: 360px; height: auto; pointer-events: none; opacity: 0.95; }
+.rk-hero-content { position: relative; max-width: 1280px; margin: 0 auto; width: 100%; padding: 0 40px; }
+.rk-slogan { margin-bottom: 48px; }
+.rk-slogan-mask { overflow: hidden; }
+.rk-slogan-line { margin: 0; font-weight: 300; color: var(--cream); line-height: 1.05; letter-spacing: -0.02em; font-size: clamp(3rem, 8.5vw, 8.5rem); opacity: 0; transform: translateY(60px); animation: rkFadeUp 1s ease-out forwards; }
+.rk-slogan-line.gold { color: var(--gold); }
+@keyframes rkFadeUp { to { opacity: 1; transform: translateY(0); } }
+.rk-hero-meta { display: flex; align-items: center; gap: 24px; max-width: 720px; }
+.rk-meta-eyebrow { color: var(--on-dark-4); font-size: 10px; letter-spacing: 0.45em; text-transform: uppercase; font-family: var(--font-mono); }
+.rk-meta-link { margin-left: auto; color: rgba(184,150,46,0.8); font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; font-family: var(--font-mono); text-decoration: none; border-bottom: 1px solid var(--accent-soft); padding-bottom: 3px; transition: all .2s; }
+.rk-meta-link:hover { color: var(--gold); border-color: var(--gold); }
+.rk-hero-philo { max-width: 560px; margin: 40px 0 0; color: var(--on-dark-2); font-size: 14px; line-height: 2; font-weight: 300; }
+.rk-scroll-ind { position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; color: var(--on-dark-4); animation: rkBounce 2s ease-in-out infinite; }
+.rk-scroll-ind span { font-size: 10px; letter-spacing: 0.4em; }
+@keyframes rkBounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+
+/* ========================== PRODUCT ========================== */
+.rk-product { display: flex; min-height: 100vh; background: var(--green-deep); }
+.rk-product-panel { width: 32%; display: flex; flex-direction: column; justify-content: space-between; padding: 100px 40px; border-right: 1px solid var(--hairline-dark); }
+.rk-product-name { font-size: clamp(1.75rem, 2.4vw, 2.25rem); font-weight: 300; color: var(--cream); letter-spacing: 0.06em; margin: 0 0 4px; }
+.rk-product-sub { color: var(--on-dark-4); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono); margin: 0 0 32px; }
+.rk-product-tagline { color: var(--on-dark-2); font-size: 14px; line-height: 1.9; font-weight: 300; white-space: pre-line; margin: 24px 0 0; }
+.rk-caps { margin: 40px 0; border-top: 1px solid var(--hairline-dark); }
+.rk-cap { display: flex; gap: 16px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--hairline-dark); }
+.rk-cap-idx { color: rgba(184,150,46,0.5); font-size: 9px; letter-spacing: 0.15em; font-family: var(--font-mono); padding-top: 3px; flex-shrink: 0; }
+.rk-cap-title { color: var(--cream); font-size: 12px; letter-spacing: 0.12em; font-weight: 300; margin: 0 0 3px; }
+.rk-cap-desc { color: var(--on-dark-3); font-size: 10px; line-height: 1.5; font-family: var(--font-mono); margin: 0; }
+.rk-product-foot { color: var(--on-dark-4); font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono); margin: 0; }
+.rk-sim { width: 68%; position: relative; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 40%, #152e21 0%, var(--green-ink) 100%); }
+.rk-sim-svg { width: 80%; max-width: 560px; height: auto; }
+.rk-sim-bar { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 14px; background: rgba(15,36,25,0.6); border: 1px solid var(--hairline-dark); padding: 10px 16px; backdrop-filter: blur(2px); }
+.rk-sim-btn { background: none; border: none; color: var(--gold); cursor: pointer; display: flex; padding: 0; }
+.rk-sim-track { width: 180px; height: 1px; background: var(--hairline-dark); position: relative; overflow: hidden; }
+.rk-sim-fill { position: absolute; left: 0; top: 0; height: 100%; width: 0; background: var(--gold); }
+.rk-sim-fill.run { animation: rkSim 6s linear infinite; }
+@keyframes rkSim { from { width: 0; } to { width: 100%; } }
+.rk-sim-tag { color: rgba(184,150,46,0.7); font-size: 9px; letter-spacing: 0.25em; font-family: var(--font-mono); }
+
+/* ========================= SERVICES ========================= */
+.rk-services { position: relative; padding: 130px 0; background: var(--green-deep); overflow: hidden; }
+.rk-services-accent { position: absolute; inset: 0; background: radial-gradient(ellipse at bottom right, rgba(184,150,46,0.08) 0%, transparent 60%); }
+.rk-services-inner { position: relative; max-width: 1152px; margin: 0 auto; padding: 0 40px; }
+.rk-services-heading { color: var(--cream); font-weight: 300; line-height: 1.15; letter-spacing: 0.2em; font-size: clamp(2.25rem, 4vw, 3rem); white-space: pre-line; margin: 0 0 72px; }
+.rk-services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.rk-service-card { border: 1px solid var(--hairline-dark); padding: 32px; height: 100%; display: flex; flex-direction: column; transition: border-color .4s, transform .4s; }
+.rk-service-card:hover { border-color: rgba(184,150,46,0.5); transform: translateY(-4px); }
+.rk-service-icon { color: var(--gold); margin-bottom: 24px; }
+.rk-service-title { color: var(--cream); font-weight: 300; line-height: 1.25; letter-spacing: 0.1em; font-size: 20px; white-space: pre-line; margin: 0 0 4px; }
+.rk-service-sub { color: var(--on-dark-4); font-size: 11px; letter-spacing: 0.18em; margin: 0 0 20px; }
+.rk-service-desc { color: var(--on-dark-2); font-size: 13px; line-height: 1.9; flex: 1; margin: 0; }
+.rk-service-status { margin-top: 32px; }
+
+/* ========================== CONTACT ========================== */
+.rk-contact { position: relative; padding: 130px 0; background: var(--cream); overflow: hidden; }
+.rk-contact-kanji { position: absolute; left: 0; top: 50%; transform: translateY(-50%); font-size: clamp(200px, 28vw, 360px); line-height: 1; color: rgba(26,58,42,0.025); font-family: var(--font-jp); user-select: none; pointer-events: none; }
+.rk-contact-inner { position: relative; max-width: 960px; margin: 0 auto; padding: 0 40px; }
+.rk-contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+.rk-contact-heading { color: var(--green-deep); font-weight: 300; line-height: 1.1; letter-spacing: 0.2em; font-size: clamp(2.25rem, 4vw, 3rem); margin: 0 0 20px; white-space: nowrap; }
+.rk-contact-desc { color: var(--fg-3); font-size: 14px; line-height: 2; margin: 0; }
+.rk-contact-email { margin-top: 40px; }
+.rk-contact-email-label { color: var(--fg-4); font-size: 11px; letter-spacing: 0.15em; margin: 0 0 8px; }
+.rk-contact-email-link { color: var(--gold); font-size: 14px; letter-spacing: 0.05em; text-decoration: none; transition: color .2s; }
+.rk-contact-email-link:hover { color: var(--gold-light); }
+.rk-form { display: flex; flex-direction: column; gap: 32px; }
+.rk-field label { display: block; color: var(--fg-4); font-size: 11px; letter-spacing: 0.15em; margin-bottom: 4px; }
+.rk-field input, .rk-field textarea { width: 100%; background: transparent; border: none; border-bottom: 1px solid var(--hairline-light); padding: 12px 0; color: var(--green-deep); font-family: var(--font-mono); font-size: 14px; resize: none; }
+.rk-field input::placeholder, .rk-field textarea::placeholder { color: var(--fg-4); }
+.rk-field input:focus, .rk-field textarea:focus { outline: none; border-bottom-color: var(--gold); }
+.rk-submit { align-self: flex-start; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.3em; padding: 14px 36px; cursor: pointer; transition: all .3s; }
+.rk-submit:hover { background: var(--gold); color: var(--cream); }
+.rk-contact-success { display: flex; flex-direction: column; gap: 18px; padding: 32px 0; }
+.rk-contact-success p { color: var(--green-deep); font-size: 16px; line-height: 2; white-space: pre-line; margin: 0; }
+
+/* ========================== FOOTER ========================== */
+.rk-footer { background: var(--green-deep); padding: 48px 40px; }
+.rk-footer-top { max-width: 1152px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.rk-footer-wm { display: flex; align-items: center; gap: 10px; }
+.rk-footer-wm span { color: var(--on-dark-2); letter-spacing: 0.2em; font-size: 14px; }
+.rk-footer-en { color: rgba(184,150,46,0.6) !important; letter-spacing: 0.4em !important; font-size: 11px !important; }
+.rk-footer-copy { color: var(--on-dark-4); font-size: 11px; letter-spacing: 0.1em; margin: 0; }
+.rk-footer-back { color: var(--on-dark-3); font-size: 11px; letter-spacing: 0.1em; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: color .2s; }
+.rk-footer-back:hover { color: var(--gold); }
+.rk-footer-links { max-width: 1152px; margin: 32px auto 0; padding-top: 32px; border-top: 1px solid var(--hairline-dark); display: flex; justify-content: center; gap: 40px; }
+.rk-footer-links a { color: var(--on-dark-4); font-size: 11px; letter-spacing: 0.1em; text-decoration: none; transition: color .2s; }
+.rk-footer-links a:hover { color: var(--on-dark-2); }
+
+/* ========================= RESPONSIVE ========================= */
+@media (max-width: 860px) {
+  .rk-nav-links { display: none; }
+  .rk-nav-mobile { display: flex; }
+  .rk-product { flex-direction: column; }
+  .rk-product-panel, .rk-sim { width: 100%; }
+  .rk-sim { aspect-ratio: 16/10; border-top: 1px solid var(--hairline-dark); }
+  .rk-product-panel { border-right: none; }
+  .rk-services-grid { grid-template-columns: 1fr; }
+  .rk-contact-grid { grid-template-columns: 1fr; gap: 48px; }
+  .rk-contact-heading { white-space: normal; }
+  .rk-tea { opacity: 0.25; width: 60%; }
+}

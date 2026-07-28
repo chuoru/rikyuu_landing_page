@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/colors_and_type.css">
+  <link rel="stylesheet" href="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/ui_kits/website/kit.css">
+  <script src="image-slot.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-thumb { background: rgba(184,150,46,0.35); }
+    image-slot.rk-blog-img { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; display: block !important; }
+  </style>
+</helmet>
+
+<div style="font-family: var(--font-base); background: var(--cream); color: var(--green-deep); min-height: 100vh;">
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; background-color: var(--green-deep); border-bottom: 1px solid rgba(245,240,232,0.10);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+          <img src="public/rikyuu_no_text.jpeg" alt="Rikyu Robotics" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <span style="letter-spacing: 0.2em; font-size: 14px; font-weight: 500; color: #F5F0E8;">利休<span style="color: var(--gold); letter-spacing: 0.3em; font-size: 12px; margin-left: 8px; font-weight: 300;">ROBOTICS</span></span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="index.html#product" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">製品</a>
+        <a href="index.html#rd" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">研究開発</a>
+        <a href="index.html#events" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">イベント</a>
+        <a href="index.html#company" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">企業情報</a>
+        <a href="#top" style="font-size: 14px; letter-spacing: 0.1em; color: var(--gold);">ブログ</a>
+        <a href="index.html#contact" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">お問い合わせ</a>
+        <button type="button" style="font-size: 12px; letter-spacing: 0.3em; border: 1px solid rgba(184,150,46,0.6); color: var(--gold); background: transparent; padding: 6px 16px; cursor: pointer; transition: all 0.2s;" style-hover="background: var(--gold); color: var(--cream); border-color: var(--gold);">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ HEADER ══════════ -->
+  <header id="top" style="padding: 180px 0 72px; background: var(--cream); position: relative; overflow: hidden;">
+    <div style="position: absolute; right: -2%; top: 50%; transform: translateY(-50%); color: rgba(26,58,42,0.03); line-height: 1; user-select: none; pointer-events: none; font-size: clamp(200px, 26vw, 340px);">記</div>
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px; position: relative;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+        <div style="width: 32px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 12px; text-transform: uppercase;">ブログ</span>
+      </div>
+      <h1 style="margin: 0; color: var(--green-deep); font-weight: 300; line-height: 1.15; font-size: clamp(48px, 6vw, 88px); letter-spacing: 0.02em;">思索と、<span style="color: var(--gold);">記録。</span></h1>
+      <p style="margin: 28px 0 0; max-width: 560px; color: rgba(26,58,42,0.60); font-size: 15px; line-height: 2; font-weight: 300;">研究の現場から、技術と哲学のあいだで考えていることを綴ります。</p>
+      <p style="margin: 12px 0 0; color: rgba(26,58,42,0.35); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; font-family: var(--font-mono);">Journal — Notes from the Lab</p>
+    </div>
+  </header>
+
+  <!-- ══════════ FEATURED POST ══════════ -->
+  <section style="padding: 0 0 96px; background: var(--cream);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <a href="#" style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: stretch; border-top: 1px solid rgba(26,58,42,0.15); padding-top: 48px;">
+        <div style="position: relative; aspect-ratio: 4 / 3; background: rgba(26,58,42,0.04); border: 1px solid rgba(26,58,42,0.10); overflow: hidden;">
+          <image-slot id="blogFeatured" class="rk-blog-img" shape="rect" placeholder="アイキャッチ画像をドロップ"></image-slot>
+          <span style="position: absolute; top: 16px; left: 16px; background: var(--green-deep); color: var(--gold); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; padding: 8px 14px; font-family: var(--font-mono);">Featured</span>
+        </div>
+        <div style="display: flex; flex-direction: column; justify-content: center; padding: 8px 0;">
+          <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 20px;">
+            <span style="color: var(--gold); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">{{ featured.category }}</span>
+            <span style="width: 20px; height: 1px; background: rgba(26,58,42,0.3);"></span>
+            <span style="color: rgba(26,58,42,0.40); font-size: 11px; letter-spacing: 0.15em; font-family: var(--font-mono);">{{ featured.date }}</span>
+          </div>
+          <h2 style="margin: 0; color: var(--green-deep); font-weight: 300; line-height: 1.35; font-size: 34px; letter-spacing: 0.02em;">{{ featured.title }}</h2>
+          <p style="margin: 24px 0 0; color: rgba(26,58,42,0.60); font-size: 15px; line-height: 2; font-weight: 300;">{{ featured.excerpt }}</p>
+          <div style="margin-top: 32px; display: flex; align-items: center; gap: 12px; color: var(--gold); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">
+            続きを読む
+            <svg style="width: 14px; height: 14px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════ POST GRID ══════════ -->
+  <section style="padding: 96px 0 128px; background: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 56px;">
+        <h2 style="margin: 0; color: var(--cream); font-weight: 300; line-height: 1.2; font-size: 36px; letter-spacing: 0.15em;">最新の記事</h2>
+        <p style="margin: 0; color: rgba(245,240,232,0.40); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">Latest</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+        <sc-for list="{{ posts }}" as="post" hint-placeholder-count="6">
+          <a href="#" style="display: flex; flex-direction: column; border: 1px solid rgba(245,240,232,0.10); transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.5); transform: translateY(-4px);">
+            <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
+              <image-slot id="{{ post.id }}" class="rk-blog-img" shape="rect" placeholder="画像をドロップ"></image-slot>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; flex: 1; border-top: 1px solid rgba(245,240,232,0.10);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                <span style="color: var(--gold); font-size: 10px; letter-spacing: 0.2em; font-family: var(--font-mono);">{{ post.category }}</span>
+                <span style="width: 16px; height: 1px; background: rgba(245,240,232,0.25);"></span>
+                <span style="color: rgba(245,240,232,0.35); font-size: 10px; letter-spacing: 0.15em; font-family: var(--font-mono);">{{ post.date }}</span>
+              </div>
+              <h3 style="margin: 0; color: var(--cream); font-weight: 300; line-height: 1.5; font-size: 18px; letter-spacing: 0.04em;">{{ post.title }}</h3>
+              <p style="margin: 14px 0 0; color: rgba(245,240,232,0.45); font-size: 13px; line-height: 1.9; font-weight: 300;">{{ post.excerpt }}</p>
+              <span style="margin-top: auto; padding-top: 24px; color: var(--gold); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">Read →</span>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-top: 72px;">
+        <button type="button" style="border: 1px solid var(--gold); color: var(--gold); background: transparent; font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; padding: 14px 40px; cursor: pointer; font-family: var(--font-mono); transition: all 0.3s;" style-hover="background: var(--gold); color: var(--cream);">もっと見る</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer style="background: var(--green-deep); padding: 48px 40px; border-top: 1px solid rgba(245,240,232,0.10);">
+    <div style="max-width: 1152px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: rgba(245,240,232,0.80); letter-spacing: 0.2em; font-size: 14px;">利休</span>
+        <span style="color: rgba(184,150,46,0.60); letter-spacing: 0.4em; font-size: 12px;">ROBOTICS</span>
+      </div>
+      <p style="margin: 0; color: rgba(245,240,232,0.30); font-size: 12px; letter-spacing: 0.1em;">© 2026 株式会社利休 All rights reserved.</p>
+      <a href="index.html" style="color: rgba(245,240,232,0.40); font-size: 12px; letter-spacing: 0.1em;" style-hover="color: var(--gold);">← トップへ戻る</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      featured: {
+        category: '哲学 / PHILOSOPHY',
+        date: '2026.06.28',
+        title: '不完全さの中に、知能を設計する',
+        excerpt: '茶の湯の「わび」の思想は、現代のロボティクスに何を教えるのか。完璧な制御ではなく、揺らぎを受け入れる設計思想について。',
+      },
+      posts: [
+        { id: 'blog1', category: '技術 / ENGINEERING', date: '2026.06.15', title: 'MuJoCo をブラウザで動かす', excerpt: 'WebAssembly によるリアルタイム物理演算の実装と、その検証環境について。' },
+        { id: 'blog2', category: '研究 / RESEARCH', date: '2026.05.30', title: 'デュアルアーム制御の難しさ', excerpt: '二本の腕を協調させる制御の課題と、力制御アプローチの現在地。' },
+        { id: 'blog3', category: '現場 / FIELD', date: '2026.05.12', title: '初日から働くロボットとは', excerpt: '導入コストを下げ、設定なしで稼働する「Dependable」な設計の考え方。' },
+        { id: 'blog4', category: '哲学 / PHILOSOPHY', date: '2026.04.24', title: '本質から、未来をつくる', excerpt: '私たちが掲げる理念の意味と、それが日々の開発にどう表れるか。' },
+        { id: 'blog5', category: '技術 / ENGINEERING', date: '2026.04.08', title: 'ROS2 と身体性AI', excerpt: '現実世界の物理と接する知能を、どのようにソフトウェアへ落とし込むか。' },
+        { id: 'blog6', category: 'イベント / EVENTS', date: '2026.03.20', title: '国際ロボット展に向けて', excerpt: '今秋の出展に向けた準備の記録と、展示するデモンストレーションの狙い。' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
