@@ -3,7 +3,7 @@ name: Deploy to Xserver
 on:
   push:
     branches:
-      - main
+      - html
 
 jobs:
   deploy:
@@ -20,4 +20,4 @@ jobs:
           port: 10022
           script: |
             cd ${{ secrets.DEPLOY_PATH }}
-            git pull origin main
+            git pull origin html
