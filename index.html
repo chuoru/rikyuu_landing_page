@@ -57,9 +57,10 @@
         </div>
         <span data-nav-title="" style="letter-spacing: 0.2em; font-size: 14px; font-weight: 500; color: #F5F0E8; transition: color 0.1s linear;">利休<span style="color: var(--gold); letter-spacing: 0.3em; font-size: 12px; margin-left: 8px; font-weight: 300;">ROBOTICS</span></span>
       </a>
-      <div data-r="navlinks" style="display: flex; align-items: center; gap: 32px;">
+      <div data-r="navlinks" style="display: flex; align-items: center; gap: 26px;">
         <a data-nav-link="" href="#product" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70); text-decoration: none; transition: color 0.15s;" style-hover="color: var(--gold);">製品</a>
         <a data-nav-link="" href="#rd" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70); text-decoration: none; transition: color 0.15s;" style-hover="color: var(--gold);">研究開発</a>
+        <a data-nav-link="" href="rikyu-lab.html" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70); text-decoration: none; transition: color 0.15s;" style-hover="color: var(--gold);">開発LABO</a>
         <a data-nav-link="" href="#events" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70); text-decoration: none; transition: color 0.15s;" style-hover="color: var(--gold);">イベント</a>
         <a data-nav-link="" href="#company" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70); text-decoration: none; transition: color 0.15s;" style-hover="color: var(--gold);">企業情報</a>
         <a data-nav-link="" href="blog.html" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70); text-decoration: none; transition: color 0.15s;" style-hover="color: var(--gold);">ブログ</a>
@@ -80,6 +81,7 @@
         <div style="display: flex; flex-direction: column;">
             <a data-nav-link href="#product" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">製品</a>
             <a data-nav-link href="#rd" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">研究開発</a>
+            <a data-nav-link href="rikyu-lab.html" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">開発LABO</a>
             <a data-nav-link href="#events" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">イベント</a>
             <a data-nav-link href="#company" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">企業情報</a>
             <a data-nav-link href="blog.html" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">ブログ</a>
@@ -226,8 +228,8 @@
         <div style="display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.1, 1); transform: {{ trackTransform }};">
             <div data-r="slide-row" style="flex: 0 0 100%; display: flex; gap: 24px; box-sizing: border-box;">
               <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
-                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
-                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/01_%E5%B7%A5%E5%A0%B4%E7%94%A8.png" alt="Factory Standard" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/01_%E5%B7%A5%E5%A0%B4%E7%94%A8.png" alt="Factory Standard" style="position: absolute; top: 24px; left: 24px; width: calc(100% - 48px); height: calc(100% - 48px); display: block; object-fit: contain; object-position: center;">
                 </div>
                 <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
                   <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">01</span>
@@ -236,8 +238,8 @@
                 </div>
               </a>
               <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
-                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
-                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/02_monitor%20base.png" alt="Monitor Base" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/02_monitor%20base.png" alt="Monitor Base" style="position: absolute; top: 24px; left: 24px; width: calc(100% - 48px); height: calc(100% - 48px); display: block; object-fit: contain; object-position: center;">
                 </div>
                 <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
                   <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">02</span>
@@ -248,8 +250,8 @@
             </div>
             <div data-r="slide-row" style="flex: 0 0 100%; display: flex; gap: 24px; box-sizing: border-box;">
               <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
-                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
-                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/03_wood%20base.png" alt="Wood Base" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/03_wood%20base.png" alt="Wood Base" style="position: absolute; top: 24px; left: 24px; width: calc(100% - 48px); height: calc(100% - 48px); display: block; object-fit: contain; object-position: center;">
                 </div>
                 <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
                   <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">03</span>
@@ -258,8 +260,8 @@
                 </div>
               </a>
               <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
-                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
-                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/04_double%20arm.png" alt="Dual Arm Station" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/04_double%20arm.png" alt="Dual Arm Station" style="position: absolute; top: 24px; left: 24px; width: calc(100% - 48px); height: calc(100% - 48px); display: block; object-fit: contain; object-position: center;">
                 </div>
                 <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
                   <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">04</span>
@@ -270,8 +272,8 @@
             </div>
             <div data-r="slide-row" style="flex: 0 0 100%; display: flex; gap: 24px; box-sizing: border-box;">
               <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
-                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
-                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/05_%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3.png" alt="Clean Standard" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/05_%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3.png" alt="Clean Standard" style="position: absolute; top: 24px; left: 24px; width: calc(100% - 48px); height: calc(100% - 48px); display: block; object-fit: contain; object-position: center;">
                 </div>
                 <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
                   <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">05</span>
@@ -280,8 +282,8 @@
                 </div>
               </a>
               <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
-                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
-                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/06_%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%83%E3%82%B7%E3%83%A5.png" alt="Stylish White" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/06_%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%83%E3%82%B7%E3%83%A5.png" alt="Stylish White" style="position: absolute; top: 24px; left: 24px; width: calc(100% - 48px); height: calc(100% - 48px); display: block; object-fit: contain; object-position: center;">
                 </div>
                 <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
                   <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">06</span>
@@ -292,8 +294,8 @@
             </div>
             <div data-r="slide-row" style="flex: 0 0 100%; display: flex; gap: 24px; box-sizing: border-box;">
               <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
-                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
-                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/07_%E6%B8%A9%E3%81%8B%E3%81%BF.png" alt="Warm Wood" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/07_%E6%B8%A9%E3%81%8B%E3%81%BF.png" alt="Warm Wood" style="position: absolute; top: 24px; left: 24px; width: calc(100% - 48px); height: calc(100% - 48px); display: block; object-fit: contain; object-position: center;">
                 </div>
                 <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
                   <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">07</span>
@@ -302,8 +304,8 @@
                 </div>
               </a>
               <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
-                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
-                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/12_%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB.png" alt="Table Top" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/12_%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB.png" alt="Table Top" style="position: absolute; top: 24px; left: 24px; width: calc(100% - 48px); height: calc(100% - 48px); display: block; object-fit: contain; object-position: center;">
                 </div>
                 <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
                   <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">08</span>
@@ -365,7 +367,7 @@
   <!-- ══════════ R&D (dark, image left) ══════════ -->
   <section id="rd" data-nav-bg="#1A3A2A" data-r="split" style="display: flex; flex-direction: row; min-height: 100vh; background: var(--green-deep);">
     <!-- Left 70% image -->
-    <div data-r="split-b" style="width: 70%; position: relative; background: #0F2419; border-right: 1px solid rgba(245,240,232,0.10);">
+    <div data-r="split-b" style="width: 70%; position: relative; background: #EFEBE2; border-right: 1px solid rgba(245,240,232,0.10);">
       <image-slot id="rdImg" shape="rect" placeholder="研究開発の画像をドロップ"></image-slot>
     </div>
 

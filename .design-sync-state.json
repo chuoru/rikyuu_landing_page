@@ -1,4 +1,5 @@
 {
   "lastSyncedAt": "2026-09-06T00:00:00Z",
-  "note": "Manual sync via interactive Claude Code session (DesignSync requires interactive login; not usable from unattended scheduled routines)."
+  "note": "Manual sync via interactive Claude Code session (DesignSync requires interactive login; not usable from unattended scheduled routines).",
+  "knownGaps": "9 binary files exceed the DesignSync get_file 256KB cap and could not be pulled: assets/lab-recognition-scene.png, assets/catalog-cover.png, uploads/スクリーンショット 2026-09-06 17.55.48.png, uploads/スクリーンショット 2026-09-06 17.56.18.png, uploads/77152.jpg, uploads/9020.jpg, uploads/画像デモ.png, uploads/展示会ワインロボ.mp4, uploads/ロボットハンドプリント.mp4 -- rikyu-lab.html references them but they 404 until resized/re-synced."
 }
