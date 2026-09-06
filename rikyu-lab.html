@@ -104,21 +104,6 @@
       </div>
 
       <div data-r="grid3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
-        <sc-for list="{{ items }}" as="it" hint-placeholder-count="9">
-          <figure style="margin: 0; border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s;" style-hover="border-color: rgba(184,150,46,0.5);">
-            <div style="position: relative; aspect-ratio: 4 / 3; background: rgba(26,58,42,0.04); overflow: hidden;">
-              <image-slot id="{{ it.id }}" shape="rect" placeholder="画像をドロップ"></image-slot>
-            </div>
-            <figcaption style="padding: 22px; border-top: 1px solid rgba(26,58,42,0.12);">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <span style="color: var(--gold); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">{{ it.category }}</span>
-                <span style="width: 14px; height: 1px; background: rgba(26,58,42,0.25);"></span>
-                <span style="color: rgba(26,58,42,0.40); font-size: 10px; letter-spacing: 0.15em; font-family: var(--font-mono);">{{ it.date }}</span>
-              </div>
-              <p style="margin: 0; color: var(--green-deep); font-size: 15px; font-weight: 300; letter-spacing: 0.06em; line-height: 1.7; text-wrap: pretty;">{{ it.title }}</p>
-            </figcaption>
-          </figure>
-        </sc-for>
         <sc-if value="{{ showSceneCard }}" hint-placeholder-val="{{ true }}">
           <figure style="margin: 0; border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s;" style-hover="border-color: rgba(184,150,46,0.5);">
             <div style="position: relative; aspect-ratio: 4 / 3; background: rgba(26,58,42,0.04); overflow: hidden;">
@@ -131,6 +116,36 @@
                 <span style="color: rgba(26,58,42,0.40); font-size: 10px; letter-spacing: 0.15em; font-family: var(--font-mono);">2026.09.02</span>
               </div>
               <p style="margin: 0; color: var(--green-deep); font-size: 15px; font-weight: 300; letter-spacing: 0.06em; line-height: 1.7; text-wrap: pretty;">画像認識デモ風景</p>
+            </figcaption>
+          </figure>
+        </sc-if>
+        <sc-if value="{{ showDemoCard }}" hint-placeholder-val="{{ true }}">
+          <figure style="margin: 0; border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s;" style-hover="border-color: rgba(184,150,46,0.5);">
+            <div style="position: relative; aspect-ratio: 4 / 3; background: rgba(26,58,42,0.04); overflow: hidden;">
+              <img src="assets/exhibit-deburring.png" alt="展示会向け バリ取りデモ機" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
+            </div>
+            <figcaption style="padding: 22px; border-top: 1px solid rgba(26,58,42,0.12);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="color: var(--gold); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">展示会 / Exhibition</span>
+                <span style="width: 14px; height: 1px; background: rgba(26,58,42,0.25);"></span>
+                <span style="color: rgba(26,58,42,0.40); font-size: 10px; letter-spacing: 0.15em; font-family: var(--font-mono);">2026.06.12</span>
+              </div>
+              <p style="margin: 0; color: var(--green-deep); font-size: 15px; font-weight: 300; letter-spacing: 0.06em; line-height: 1.7; text-wrap: pretty;">展示会向け　バリ取りデモ機</p>
+            </figcaption>
+          </figure>
+        </sc-if>
+        <sc-if value="{{ showBoothCard }}" hint-placeholder-val="{{ true }}">
+          <figure style="margin: 0; border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s;" style-hover="border-color: rgba(184,150,46,0.5);">
+            <div style="position: relative; aspect-ratio: 4 / 3; background: rgba(26,58,42,0.04); overflow: hidden;">
+              <img src="assets/booth-v3.png" alt="ROBOT TECHNOLOGY JAPAN 2026 ブース" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
+            </div>
+            <figcaption style="padding: 22px; border-top: 1px solid rgba(26,58,42,0.12);">
+              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <span style="color: var(--gold); font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">展示会 / Exhibition</span>
+                <span style="width: 14px; height: 1px; background: rgba(26,58,42,0.25);"></span>
+                <span style="color: rgba(26,58,42,0.40); font-size: 10px; letter-spacing: 0.15em; font-family: var(--font-mono);">2026.06.11</span>
+              </div>
+              <p style="margin: 0; color: var(--green-deep); font-size: 15px; font-weight: 300; letter-spacing: 0.06em; line-height: 1.7; text-wrap: pretty;">ROBOT TECHNOLOGY JAPAN 2026 ブース</p>
             </figcaption>
           </figure>
         </sc-if>
@@ -242,7 +257,7 @@
         <sc-if value="{{ showPhotoCard }}" hint-placeholder-val="{{ true }}">
           <figure style="margin: 0; border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s;" style-hover="border-color: rgba(184,150,46,0.5);">
             <div style="position: relative; aspect-ratio: 4 / 3; background: rgba(26,58,42,0.04); overflow: hidden;">
-              <img src="uploads/%E7%94%BB%E5%83%8F%E3%83%86%E3%82%99%E3%83%A2.png" alt="画像認識デモ" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
+              <img src="uploads/画像デモ.png" alt="画像認識デモ" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
             </div>
             <figcaption style="padding: 22px; border-top: 1px solid rgba(26,58,42,0.12);">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
@@ -358,10 +373,6 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 
-const ITEMS = [
-  { id: 'lab4', cat: '展示会', category: '展示会 / Exhibition', date: '2026.06.11', title: 'ROBOT TECHNOLOGY JAPAN 2026 ブース' },
-  { id: 'lab7', cat: '展示会', category: '展示会 / Exhibition', date: '2026.06.12', title: '展示会向け　バリ取りデモ機' },
-];
 
 class Component extends DCLogic {
   state = { filter: 'すべて', menuOpen: false };
@@ -381,7 +392,6 @@ class Component extends DCLogic {
         color: c === active ? '#F5F0E8' : 'rgba(26,58,42,0.82)',
         border: c === active ? '#B8962E' : 'rgba(26,58,42,0.20)',
       })),
-      items: active === 'すべて' ? ITEMS : ITEMS.filter(i => i.cat === active),
       showPhotoCard: active === 'すべて' || active === '作業イメージ',
       showTrainingCard: active === 'すべて' || active === '開発風景',
       showSimCard: active === 'すべて' || active === '開発風景',
@@ -390,6 +400,8 @@ class Component extends DCLogic {
       showMotionCard: active === 'すべて' || active === '作業イメージ',
       showHandCard: active === 'すべて' || active === '開発風景',
       showPanelCard: active === 'すべて' || active === '開発風景',
+      showDemoCard: active === 'すべて' || active === '展示会',
+      showBoothCard: active === 'すべて' || active === '展示会',
       showSceneCard: active === 'すべて' || active === '開発風景',
       videos: [
         { id: 'labvid1', index: '01', title: '展示会ワインロボデモ機', date: '2026.08.20', hasVideo: true, noVideo: false, poster: 'assets/poster-wine-robot.jpg', src: 'uploads/%E5%B1%95%E7%A4%BA%E4%BC%9A%E3%83%AF%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%9B%E3%82%99.mp4' },
