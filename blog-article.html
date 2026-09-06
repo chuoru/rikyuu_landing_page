@@ -18,6 +18,17 @@
     a:hover { color: var(--gold-light); }
     ::-webkit-scrollbar { width: 10px; }
     ::-webkit-scrollbar-thumb { background: rgba(184,150,46,0.35); }
+    @media (max-width: 820px) {
+      [data-r="navbar"] { padding: 12px 20px !important; }
+      [data-r="navlinks"] { display: none !important; }
+      [data-r="burger"] { display: flex !important; }
+      [data-r="mobilemenu"] { display: block !important; }
+      [data-r="wrap"] { padding-left: 20px !important; padding-right: 20px !important; }
+      [data-r="sec"] { padding-top: 72px !important; padding-bottom: 72px !important; }
+      [data-r="grid2"] { grid-template-columns: 1fr !important; gap: 40px !important; }
+      [data-r="grid3"] { grid-template-columns: 1fr !important; }
+      [data-r="hd"] { padding-top: 128px !important; }
+    }
   </style>
 </helmet>
 
@@ -25,14 +36,14 @@
 
   <!-- ══════════ NAVBAR ══════════ -->
   <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; background-color: var(--green-deep); border-bottom: 1px solid rgba(245,240,232,0.10);">
-    <div style="max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;">
+    <div data-r="navbar" style="max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;">
       <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
         <div style="width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
           <img src="public/rikyuu_no_text.jpeg" alt="Rikyu Robotics" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
         <span style="letter-spacing: 0.2em; font-size: 14px; font-weight: 500; color: #F5F0E8;">利休<span style="color: var(--gold); letter-spacing: 0.3em; font-size: 12px; margin-left: 8px; font-weight: 300;">ROBOTICS</span></span>
       </a>
-      <div style="display: flex; align-items: center; gap: 32px;">
+      <div data-r="navlinks" style="display: flex; align-items: center; gap: 32px;">
         <a href="index.html#product" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">製品</a>
         <a href="index.html#rd" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">研究開発</a>
         <a href="index.html#events" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">イベント</a>
@@ -41,12 +52,33 @@
         <a href="index.html#contact" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">お問い合わせ</a>
         <button type="button" style="font-size: 12px; letter-spacing: 0.3em; border: 1px solid rgba(184,150,46,0.6); color: var(--gold); background: transparent; padding: 6px 16px; cursor: pointer; transition: all 0.2s;" style-hover="background: var(--gold); color: var(--cream); border-color: var(--gold);">EN</button>
       </div>
+        <button data-r="burger" type="button" onClick="{{ toggleMenu }}" aria-label="メニュー" aria-expanded="{{ menuOpen }}" style="display: none; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid rgba(184,150,46,0.6); background: transparent; color: var(--gold); cursor: pointer; flex-shrink: 0; padding: 0;">
+          <sc-if value="{{ menuClosed }}" hint-placeholder-val="{{ true }}">
+            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path></svg>
+          </sc-if>
+          <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+            <svg style="width: 16px; height: 16px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 15l7-7 7 7"></path></svg>
+          </sc-if>
+        </button>
     </div>
+    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+      <div data-r="mobilemenu" style="display: none; border-top: 1px solid rgba(245,240,232,0.10); padding: 4px 20px 20px;">
+        <div style="display: flex; flex-direction: column;">
+            <a href="index.html#product" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">製品</a>
+            <a href="index.html#rd" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">研究開発</a>
+            <a href="index.html#events" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">イベント</a>
+            <a href="index.html#company" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">企業情報</a>
+            <a href="blog.html" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">ブログ</a>
+            <a href="index.html#contact" onClick="{{ closeMenu }}" style="color: rgba(245,240,232,0.80); font-size: 15px; letter-spacing: 0.12em; text-decoration: none; padding: 14px 0; border-bottom: 1px solid rgba(245,240,232,0.08);" style-hover="color: var(--gold);">お問い合わせ</a>
+          <button type="button" onClick="{{ closeMenu }}" style="align-self: flex-start; margin-top: 20px; font-size: 12px; letter-spacing: 0.3em; border: 1px solid rgba(184,150,46,0.6); color: var(--gold); background: transparent; padding: 10px 20px; cursor: pointer; font-family: var(--font-mono);">EN</button>
+        </div>
+      </div>
+    </sc-if>
   </nav>
 
   <!-- ══════════ ARTICLE HEADER ══════════ -->
-  <header id="top" style="padding: 172px 0 0; background: var(--cream);">
-    <div style="max-width: 800px; margin: 0 auto; padding: 0 40px;">
+  <header id="top" data-r="hd" style="padding: 172px 0 0; background: var(--cream);">
+    <div data-r="wrap" style="max-width: 800px; margin: 0 auto; padding: 0 40px;">
       <a href="blog.html" style="display: inline-flex; align-items: center; gap: 10px; color: rgba(26,58,42,0.45); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono); margin-bottom: 48px;" style-hover="color: var(--gold);">
         <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 12H5M11 18l-6-6 6-6"></path></svg>
         ブログ一覧へ
@@ -77,7 +109,7 @@
   </header>
 
   <!-- ══════════ COVER ══════════ -->
-  <div style="max-width: 800px; margin: 56px auto 0; padding: 0 40px;">
+  <div data-r="wrap" style="max-width: 800px; margin: 56px auto 0; padding: 0 40px;">
     <div style="position: relative; aspect-ratio: 16 / 9; background: var(--green-deep); overflow: hidden; display: flex; align-items: flex-end; padding: 40px;">
       <div style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); color: rgba(245,240,232,0.055); line-height: 0.8; user-select: none; font-size: 300px; font-weight: 300;">{{ post.kanji }}</div>
       <div style="position: relative; display: flex; align-items: center; gap: 14px;">
@@ -88,8 +120,8 @@
   </div>
 
   <!-- ══════════ ARTICLE BODY ══════════ -->
-  <article style="padding: 72px 0 96px; background: var(--cream);">
-    <div style="max-width: 800px; margin: 0 auto; padding: 0 40px;">
+  <article data-r="sec" style="padding: 72px 0 96px; background: var(--cream);">
+    <div data-r="wrap" style="max-width: 800px; margin: 0 auto; padding: 0 40px;">
 
       <sc-for list="{{ post.intro }}" as="para" hint-placeholder-count="2">
         <p style="margin: 0 0 32px; color: rgba(26,58,42,0.78); font-size: 16px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">{{ para }}</p>
@@ -133,13 +165,13 @@
   </article>
 
   <!-- ══════════ RELATED ══════════ -->
-  <section style="padding: 96px 0; background: var(--green-deep);">
-    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+  <section data-r="sec" style="padding: 96px 0; background: var(--green-deep);">
+    <div data-r="wrap" style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
       <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 48px;">
         <div style="width: 32px; height: 1px; background: var(--gold);"></div>
         <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">関連記事</span>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+      <div data-r="grid3" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
         <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
           <a href="{{ r.href }}" style="display: flex; flex-direction: column; border: 1px solid rgba(245,240,232,0.10); transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.5); transform: translateY(-4px);">
             <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden; display: flex; align-items: flex-end; padding: 20px;">
@@ -389,7 +421,7 @@ const ARTICLES = {
 const ORDER = ['featured', 'blog1', 'blog2', 'blog3', 'blog4', 'blog5', 'blog6'];
 
 class Component extends DCLogic {
-  state = { key: null };
+  state = { key: null , menuOpen: false };
 
   componentDidMount() {
     this.sync();
@@ -426,7 +458,11 @@ class Component extends DCLogic {
       date: ARTICLES[k].date,
       title: ARTICLES[k].title,
     }));
-    return { post, related };
+    return {       menuOpen: this.state.menuOpen,
+      menuClosed: !this.state.menuOpen,
+      toggleMenu: () => this.setState(st => ({ menuOpen: !st.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+post, related };
   }
 }
 </script>
