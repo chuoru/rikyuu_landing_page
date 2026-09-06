@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/colors_and_type.css">
+  <link rel="stylesheet" href="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/ui_kits/website/kit.css">
+  <script src="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/_ds_bundle.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-thumb { background: rgba(184,150,46,0.35); }
+  </style>
+</helmet>
+
+<div style="font-family: var(--font-base); background: var(--cream); color: var(--green-deep); min-height: 100vh;">
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; background-color: var(--green-deep); border-bottom: 1px solid rgba(245,240,232,0.10);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+          <img src="public/rikyuu_no_text.jpeg" alt="Rikyu Robotics" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <span style="letter-spacing: 0.2em; font-size: 14px; font-weight: 500; color: #F5F0E8;">利休<span style="color: var(--gold); letter-spacing: 0.3em; font-size: 12px; margin-left: 8px; font-weight: 300;">ROBOTICS</span></span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="index.html#product" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">製品</a>
+        <a href="index.html#rd" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">研究開発</a>
+        <a href="index.html#events" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">イベント</a>
+        <a href="index.html#company" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">企業情報</a>
+        <a href="blog.html" style="font-size: 14px; letter-spacing: 0.1em; color: var(--gold);">ブログ</a>
+        <a href="index.html#contact" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">お問い合わせ</a>
+        <button type="button" style="font-size: 12px; letter-spacing: 0.3em; border: 1px solid rgba(184,150,46,0.6); color: var(--gold); background: transparent; padding: 6px 16px; cursor: pointer; transition: all 0.2s;" style-hover="background: var(--gold); color: var(--cream); border-color: var(--gold);">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ ARTICLE HEADER ══════════ -->
+  <header id="top" style="padding: 172px 0 0; background: var(--cream);">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 40px;">
+      <a href="blog.html" style="display: inline-flex; align-items: center; gap: 10px; color: rgba(26,58,42,0.45); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono); margin-bottom: 48px;" style-hover="color: var(--gold);">
+        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 12H5M11 18l-6-6 6-6"></path></svg>
+        ブログ一覧へ
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 28px; flex-wrap: wrap;">
+        <span style="color: var(--gold); font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; font-family: var(--font-mono);">{{ post.category }}</span>
+        <span style="width: 20px; height: 1px; background: rgba(26,58,42,0.3);"></span>
+        <span style="color: rgba(26,58,42,0.40); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">{{ post.date }}</span>
+        <span style="width: 20px; height: 1px; background: rgba(26,58,42,0.3);"></span>
+        <span style="color: rgba(26,58,42,0.40); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">{{ post.readTime }}</span>
+      </div>
+
+      <h1 style="margin: 0; color: var(--green-deep); font-weight: 300; line-height: 1.35; font-size: clamp(34px, 4.4vw, 52px); letter-spacing: 0.01em; text-wrap: pretty;">{{ post.title }}</h1>
+
+      <p style="margin: 32px 0 0; color: rgba(26,58,42,0.60); font-size: 16px; line-height: 2; font-weight: 300; text-wrap: pretty;">{{ post.lead }}</p>
+
+      <div style="display: flex; align-items: center; gap: 16px; margin: 40px 0 0; padding: 24px 0; border-top: 1px solid rgba(26,58,42,0.12); border-bottom: 1px solid rgba(26,58,42,0.12);">
+        <div style="width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+          <img src="public/rikyuu_no_text.jpeg" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div>
+          <p style="margin: 0; color: var(--green-deep); font-size: 13px; letter-spacing: 0.1em;">利休ロボティクス 研究チーム</p>
+          <p style="margin: 2px 0 0; color: rgba(26,58,42,0.40); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">Research Team</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════ COVER ══════════ -->
+  <div style="max-width: 800px; margin: 56px auto 0; padding: 0 40px;">
+    <div style="position: relative; aspect-ratio: 16 / 9; background: var(--green-deep); overflow: hidden; display: flex; align-items: flex-end; padding: 40px;">
+      <div style="position: absolute; right: -30px; top: 50%; transform: translateY(-50%); color: rgba(245,240,232,0.055); line-height: 0.8; user-select: none; font-size: 300px; font-weight: 300;">{{ post.kanji }}</div>
+      <div style="position: relative; display: flex; align-items: center; gap: 14px;">
+        <div style="width: 32px; height: 1px; background: var(--gold);"></div>
+        <span style="color: rgba(184,150,46,0.85); font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase; font-family: var(--font-mono);">{{ post.coverLabel }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════ ARTICLE BODY ══════════ -->
+  <article style="padding: 72px 0 96px; background: var(--cream);">
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 40px;">
+
+      <sc-for list="{{ post.intro }}" as="para" hint-placeholder-count="2">
+        <p style="margin: 0 0 32px; color: rgba(26,58,42,0.78); font-size: 16px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">{{ para }}</p>
+      </sc-for>
+
+      <sc-for list="{{ post.sections }}" as="sec" hint-placeholder-count="3">
+        <div>
+          <h2 style="margin: 64px 0 24px; color: var(--green-deep); font-weight: 300; font-size: 30px; letter-spacing: 0.08em; line-height: 1.5;">{{ sec.heading }}</h2>
+          <div style="width: 32px; height: 1px; background: var(--gold); margin-bottom: 32px;"></div>
+          <sc-for list="{{ sec.paras }}" as="para" hint-placeholder-count="2">
+            <p style="margin: 0 0 32px; color: rgba(26,58,42,0.78); font-size: 16px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">{{ para }}</p>
+          </sc-for>
+        </div>
+      </sc-for>
+
+      <blockquote style="margin: 48px 0; padding: 40px; background: var(--green-deep);">
+        <p style="margin: 0; color: var(--cream); font-size: 22px; line-height: 1.9; font-weight: 300; letter-spacing: 0.04em; white-space: pre-line;">{{ post.quoteJa }}</p>
+        <p style="margin: 20px 0 0; color: rgba(184,150,46,0.85); font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; font-family: var(--font-mono);">{{ post.quoteEn }}</p>
+      </blockquote>
+
+      <div style="border-top: 1px solid rgba(26,58,42,0.12); margin: 48px 0;">
+        <sc-for list="{{ post.points }}" as="pt" hint-placeholder-count="3">
+          <div style="display: flex; align-items: flex-start; gap: 24px; padding: 24px 0; border-bottom: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; padding-top: 5px; flex-shrink: 0;">{{ pt.index }}</span>
+            <div>
+              <p style="margin: 0 0 6px; color: var(--green-deep); font-size: 16px; font-weight: 300; letter-spacing: 0.08em;">{{ pt.title }}</p>
+              <p style="margin: 0; color: rgba(26,58,42,0.60); font-size: 14px; line-height: 1.95; font-weight: 300; text-wrap: pretty;">{{ pt.desc }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <p style="margin: 0; color: rgba(26,58,42,0.78); font-size: 16px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">{{ post.closing }}</p>
+
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 64px; padding-top: 40px; border-top: 1px solid rgba(26,58,42,0.12);">
+        <sc-for list="{{ post.tags }}" as="tag" hint-placeholder-count="4">
+          <span style="border: 1px solid rgba(26,58,42,0.20); color: rgba(26,58,42,0.55); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; padding: 8px 16px; font-family: var(--font-mono);">{{ tag }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </article>
+
+  <!-- ══════════ RELATED ══════════ -->
+  <section style="padding: 96px 0; background: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 48px;">
+        <div style="width: 32px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">関連記事</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;">
+        <sc-for list="{{ related }}" as="r" hint-placeholder-count="3">
+          <a href="{{ r.href }}" style="display: flex; flex-direction: column; border: 1px solid rgba(245,240,232,0.10); transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.5); transform: translateY(-4px);">
+            <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden; display: flex; align-items: flex-end; padding: 20px;">
+              <div style="position: absolute; right: -18px; top: 50%; transform: translateY(-50%); color: rgba(245,240,232,0.06); line-height: 0.8; user-select: none; font-size: 170px; font-weight: 300;">{{ r.kanji }}</div>
+              <div style="position: relative; display: flex; align-items: center; gap: 12px;">
+                <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+                <span style="color: rgba(184,150,46,0.85); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-family: var(--font-mono);">{{ r.kana }}</span>
+              </div>
+            </div>
+            <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+              <span style="color: rgba(245,240,232,0.35); font-size: 10px; letter-spacing: 0.2em; font-family: var(--font-mono); display: block; margin-bottom: 12px;">{{ r.date }}</span>
+              <h3 style="margin: 0; color: var(--cream); font-weight: 300; line-height: 1.5; font-size: 17px; letter-spacing: 0.04em;">{{ r.title }}</h3>
+            </div>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer style="background: var(--green-deep); padding: 48px 40px; border-top: 1px solid rgba(245,240,232,0.10);">
+    <div style="max-width: 1152px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: rgba(245,240,232,0.80); letter-spacing: 0.2em; font-size: 14px;">利休</span>
+        <span style="color: rgba(184,150,46,0.60); letter-spacing: 0.4em; font-size: 12px;">ROBOTICS</span>
+      </div>
+      <p style="margin: 0; color: rgba(245,240,232,0.30); font-size: 12px; letter-spacing: 0.1em;">© 2026 株式会社利休 All rights reserved.</p>
+      <a href="blog.html" style="color: rgba(245,240,232,0.40); font-size: 12px; letter-spacing: 0.1em;" style-hover="color: var(--gold);">← ブログ一覧へ</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const ARTICLES = {
+  featured: {
+    kanji: '侘', kana: 'Philosophy', category: '哲学 / Philosophy', date: '2026.09.06', readTime: '6分で読めます',
+    coverLabel: 'Wabi — Beauty in Imperfection',
+    title: '不完全さの中に、知能を設計する',
+    lead: '茶の湯の「わび」の思想は、現代のロボティクスに何を教えるのか。完璧な制御ではなく、揺らぎを受け入れる設計思想について。',
+    intro: [
+      'ロボティクスの歴史は、長いあいだ「誤差をなくすこと」の歴史でした。位置決めの精度を上げ、外乱を打ち消し、想定どおりに動かす。環境が固定された工場の中では、それは正しい設計でした。',
+      'しかし現場に出ると、前提が崩れます。ものの置き場所は毎回ずれ、照明は変わり、人が横を通ります。誤差をゼロにしようとする設計は、そこで硬直します。私たちが向き合っているのは、この転換点です。',
+    ],
+    sections: [
+      { heading: '完璧さを、前提から外す', paras: [
+        '千利休が大成した「わび」は、欠けや歪みを排除せず、そこに美を見出す態度でした。均整の取れた唐物ではなく、歪んだ楽茶碗を選ぶ。それは妥協ではなく、より高い次元の設計判断です。',
+        '同じことがロボットの設計にも言えます。揺らぎを異常として排除するのではなく、揺らぎがあることを前提に振る舞いを組み立てる。硬い制御では折れてしまう場面で、柔らかい制御は成り立ちます。',
+      ]},
+      { heading: '簡素さは、機能である', paras: [
+        '茶室は必要なものだけで構成されています。装飾を削ることで、そこで起きる一つひとつの動作が立ち上がる。ロボットのシステムも同じで、部品や設定項目が増えるほど導入は遅くなり、壊れる箇所が増えます。',
+        '私たちが「初日から働けること」を設計目標に置いているのは、そのためです。簡素さは美意識であると同時に、実務上の機能なのです。',
+      ]},
+    ],
+    quoteJa: '不完全さの中に美を見出し、\n簡素さの中に意味を見出す。',
+    quoteEn: 'Find beauty in imperfection. Discover meaning in simplicity.',
+    points: [
+      { index: '01', title: 'ばらつきを設計に入れる', desc: '摩擦・質量・接触タイミングを意図的に変動させ、単一条件に最適化されない振る舞いを育てます。' },
+      { index: '02', title: '接触を感じ取る', desc: '力制御された関節が、位置のずれを接触の情報として扱い、動作の途中で自らを調整します。' },
+      { index: '03', title: '差を埋めずに乗り越える', desc: 'シミュレーションと現実の差をゼロにするのではなく、差があっても崩れない方針を選びます。' },
+    ],
+    closing: '完璧な制御を目指すのではなく、揺らぎのある世界の中で確かに働くこと。それが私たちの考える本質です。四百年前の茶室で選ばれた歪んだ器は、いまも同じことを教えてくれます。',
+    tags: ['Philosophy', 'Wabi', 'Physical AI', 'Control'],
+  },
+
+  blog1: {
+    kanji: '算', kana: 'Engineering', category: '技術 / Engineering', date: '2026.08.23', readTime: '5分で読めます',
+    coverLabel: 'MuJoCo WebAssembly — Physics in Browser',
+    title: 'MuJoCo をブラウザで動かす',
+    lead: 'WebAssembly によるリアルタイム物理演算の実装と、その検証環境について。',
+    intro: [
+      'ロボットの挙動を人に伝えるとき、動画では足りないことがあります。触ってみて、視点を変えて、条件を変えたときに何が起きるかを確かめたい。そこで私たちは、物理シミュレーションをそのままブラウザに載せることにしました。',
+      '使っているのは MuJoCo です。研究用途で広く使われている物理エンジンを WebAssembly にコンパイルし、ページを開いた瞬間からリアルタイムで動く状態にしています。',
+    ],
+    sections: [
+      { heading: 'なぜブラウザなのか', paras: [
+        'インストールが要らないという一点が、想像以上に大きく効きます。展示会でも、商談の席でも、URL を開けばその場で同じ環境が立ち上がる。専用 PC を持ち歩く必要がありません。',
+        'また、シミュレーションが手元で動くことは、私たち自身の開発速度にも直結します。パラメータを変えて即座に結果を見る、というループが短くなるほど、設計判断は速く正確になります。',
+      ]},
+      { heading: '実装で効いたこと', paras: [
+        '描画と物理演算のフレームを分離し、演算が重くなっても表示が止まらないようにしています。また初回読み込みのモデルを小さく分割し、体感の待ち時間を抑えました。',
+        '一方で、ブラウザの制約から逃れられない部分もあります。演算ステップを細かくしすぎるとフレームを落とすため、精度と応答性のどこで折り合いをつけるかを、用途ごとに決めています。',
+      ]},
+    ],
+    quoteJa: '触れて確かめられる説明は、\n言葉よりも速い。',
+    quoteEn: 'MuJoCo WebAssembly — real-time physics in browser',
+    points: [
+      { index: '01', title: 'インストール不要', desc: 'URL を開くだけで同じ検証環境が立ち上がり、展示や商談の場でそのまま使えます。' },
+      { index: '02', title: 'フレーム分離', desc: '描画と物理演算を切り離し、演算が重い場面でも表示が滞らない構成にしています。' },
+      { index: '03', title: '精度と応答性の調停', desc: '演算ステップの細かさを用途ごとに決め、体感の滑らかさを優先する場面を切り分けます。' },
+    ],
+    closing: 'シミュレーションは、私たちにとって説明の道具である以上に、設計の場そのものです。ブラウザに置いたことで、その場が誰にでも開かれました。',
+    tags: ['Engineering', 'MuJoCo', 'WebAssembly', 'Simulation'],
+  },
+
+  blog2: {
+    kanji: '腕', kana: 'Research', category: '研究 / Research', date: '2026.08.09', readTime: '6分で読めます',
+    coverLabel: 'Dual-Arm Manipulation',
+    title: 'デュアルアーム制御の難しさ',
+    lead: '二本の腕を協調させる制御の課題と、力制御アプローチの現在地。',
+    intro: [
+      '腕が一本から二本になると、難しさは二倍ではなく、それ以上になります。二つの腕が同じ物体を持つ瞬間、互いの動きが相手への外乱として働くからです。',
+      'この問題は位置制御だけでは解けません。両方が「正しい位置」を主張し合うと、物体には過大な力がかかります。人が二人で板を運ぶとき、力を抜いて相手に合わせるのと同じ調整が必要になります。',
+    ],
+    sections: [
+      { heading: '力で会話する', paras: [
+        '私たちのアプローチは、関節を力制御下に置くことです。位置の目標は保ちながら、接触で生じた力を検出して自らの姿勢を譲る。二本の腕が力を通じて互いの状態を知る、という構図になります。',
+        'この方式の利点は、物体の寸法が想定と少し違っても成立することです。硬い位置制御なら破断していた誤差が、力の逃げ道があることで吸収されます。',
+      ]},
+      { heading: '残っている課題', paras: [
+        '難しいのは、力の情報が常に綺麗ではないという点です。摩擦や自重の影響が混ざり、接触由来の力だけを取り出すのは簡単ではありません。モデルによる補正と実測の擦り合わせを続けています。',
+        'また、両腕の役割分担をどう決めるかにも定石がありません。片方を主、もう片方を従とするのか、対称に扱うのか。作業ごとに最適な構成が変わります。',
+      ]},
+    ],
+    quoteJa: '二本の腕は、位置ではなく\n力で会話する。',
+    quoteEn: 'Force-limited joints, coordinated motion',
+    points: [
+      { index: '01', title: '力制御を土台にする', desc: '位置目標を保ちつつ接触力を検出し、相手の腕に譲ることで過大な力を避けます。' },
+      { index: '02', title: '寸法誤差を吸収する', desc: '力の逃げ道があるため、物体が想定と数ミリ違っても作業が成立します。' },
+      { index: '03', title: '役割分担は作業ごと', desc: '主従を決めるか対称に扱うかは一定ではなく、作業に応じて構成を選びます。' },
+    ],
+    closing: '二本の腕を協調させることは、精度を上げる問題ではなく、譲り合いを設計する問題でした。その視点に立ってから、進み方が変わりました。',
+    tags: ['Research', 'Dual-Arm', 'Force Control', 'Manipulation'],
+  },
+
+  blog3: {
+    kanji: '場', kana: 'Field', category: '現場 / Field', date: '2026.07.26', readTime: '4分で読めます',
+    coverLabel: 'Dependable — Ready on Day One',
+    title: '初日から働くロボットとは',
+    lead: '導入コストを下げ、設定なしで稼働する「Dependable」な設計の考え方。',
+    intro: [
+      'ロボットを導入した現場で最初に起きるのは、稼働ではなく調整です。設置、座標合わせ、動作の作り込み。ここに数週間かかることが、導入をためらわせる最大の理由になっています。',
+      '私たちはこの期間を、性能の問題ではなく設計の問題として捉えています。初日から働けるかどうかは、ロボットの速さや精度とは別の軸にあります。',
+    ],
+    sections: [
+      { heading: '設定を減らす', paras: [
+        '調整項目が多いほど、現場での立ち上げは長くなります。そこで、設定できることを意図的に絞り、既定の状態で成立する範囲を広げる方向に舵を切りました。',
+        '自由度を削ることには痛みもあります。特殊な要求には応えにくくなる。しかし多くの現場では、すぐ動くことの価値がそれを上回ります。',
+      ]},
+      { heading: '揺らぎに任せる', paras: [
+        '座標を精密に合わせなくても動くなら、設置の手間は大きく減ります。力制御と接触の検出に頼ることで、治具の精度に依存しない構成を目指しています。',
+        '結果として、導入時の作業は「置いて、電源を入れて、動かす」に近づいていきます。これが私たちの言う Dependable です。',
+      ]},
+    ],
+    quoteJa: '初日から働けることは、\n速さや精度とは別の設計軸にある。',
+    quoteEn: 'Robots ready to work on day one',
+    points: [
+      { index: '01', title: '設定項目を絞る', desc: '既定状態で成立する範囲を広げ、現場での立ち上げ時間を短縮します。' },
+      { index: '02', title: '治具精度に依存しない', desc: '接触と力の検出に頼ることで、座標の精密合わせを前提にしません。' },
+      { index: '03', title: '導入を三手に近づける', desc: '置く・電源を入れる・動かす。この単純さ自体を設計目標に据えます。' },
+    ],
+    closing: '現場で本当に問われるのは、最高性能ではなく、明日から使えるかどうかでした。私たちはそこに設計の重心を置いています。',
+    tags: ['Field', 'Dependable', 'Deployment', 'Design'],
+  },
+
+  blog4: {
+    kanji: '本', kana: 'Philosophy', category: '哲学 / Philosophy', date: '2026.07.12', readTime: '4分で読めます',
+    coverLabel: 'Crafting the Future from What Matters',
+    title: '本質から、未来をつくる',
+    lead: '私たちが掲げる理念の意味と、それが日々の開発にどう表れるか。',
+    intro: [
+      '「本質から、未来を、つくる。」という言葉を掲げています。抽象的に聞こえるかもしれませんが、これは日々の判断のための基準として置いたものです。',
+      '新しい機能を足すかどうか迷ったとき、私たちはこの言葉に戻ります。それは本質に近づく変更なのか、見かけを整える変更なのか。',
+    ],
+    sections: [
+      { heading: '本質とは、削った後に残るもの', paras: [
+        '茶の湯において、道具の数を減らすことは貧しさではありませんでした。減らすことで、残ったものの意味が立ち上がる。何を残すかを決める行為が、そのまま思想の表明になります。',
+        '製品開発でも同じです。仕様を足し続ければ説明は増えますが、価値は薄まっていきます。削った後に残ったものが、その製品の本質です。',
+      ]},
+      { heading: '判断の場に降りてくる理念', paras: [
+        '理念が掲げるだけのものになるかどうかは、それが実際の議論で使われるかで決まります。私たちは仕様を決める場でこの言葉を持ち出します。それが唯一の使い方です。',
+        '結果として選ばないものが増えます。断ることのほうが多い。しかしその積み重ねが、製品の輪郭をつくっていきます。',
+      ]},
+    ],
+    quoteJa: '本質から、未来を、つくる。',
+    quoteEn: 'Crafting the Future from What Matters',
+    points: [
+      { index: '01', title: '削って決める', desc: '足す判断より、残すものを決める判断を重く扱います。' },
+      { index: '02', title: '議論で使う言葉にする', desc: '掲げるだけでなく、仕様を決める場で実際に持ち出せる基準にします。' },
+      { index: '03', title: '断ることを含める', desc: '選ばない判断の積み重ねが、製品の輪郭をつくると考えています。' },
+    ],
+    closing: '理念は飾りではなく、道具です。迷ったときに立ち返る場所があることが、遠回りを減らしてくれます。',
+    tags: ['Philosophy', 'Essence', 'Product', 'Design'],
+  },
+
+  blog5: {
+    kanji: '知', kana: 'Engineering', category: '技術 / Engineering', date: '2026.06.28', readTime: '5分で読めます',
+    coverLabel: 'ROS2 and Embodied Intelligence',
+    title: 'ROS2 と身体性AI',
+    lead: '現実世界の物理と接する知能を、どのようにソフトウェアへ落とし込むか。',
+    intro: [
+      '身体を持つ知能は、画面の中の知能とは要求が違います。判断が遅れれば物は落ち、間違えれば壊れる。時間そのものが仕様に含まれます。',
+      '私たちはこの制約を扱う土台として ROS2 を使っています。分散したノードが決まった周期で情報を交換する構造は、身体を持つシステムに向いています。',
+    ],
+    sections: [
+      { heading: '周期が仕様になる', paras: [
+        '力制御のループは速く、認識の処理は遅い。この二つを同じ周期で回そうとすると、どちらかが犠牲になります。層ごとに異なる周期を持たせ、境界で情報を受け渡す構成にしています。',
+        '遅い層の判断が届くまで、速い層は自分の責任範囲で持ちこたえる。この役割分担が、破綻しないシステムの条件になります。',
+      ]},
+      { heading: '学習と制御のあいだ', paras: [
+        '学習で得た方針をそのまま関節に流すのではなく、力制御の層を必ず通します。学習が予期しない出力を出したときに、物理的な安全がそこで担保されるからです。',
+        'この構造は学習の自由度を狭めます。しかし現場に出す前提では、担保のない賢さは採用できません。',
+      ]},
+    ],
+    quoteJa: '身体を持つ知能にとって、\n時間は仕様の一部である。',
+    quoteEn: 'Embodied intelligence, deployed with guarantees',
+    points: [
+      { index: '01', title: '層ごとに周期を分ける', desc: '速い力制御と遅い認識を同じループに載せず、境界で情報を受け渡します。' },
+      { index: '02', title: '速い層が持ちこたえる', desc: '上位の判断が届くまで、下位が自分の責任範囲で安定を保ちます。' },
+      { index: '03', title: '学習の出力に担保を置く', desc: '学習した方針は必ず力制御の層を通し、物理的な安全を確保します。' },
+    ],
+    closing: '賢さを追うだけでは現場に出せません。身体を持つ知能には、賢さと同じ重みで担保が要ります。',
+    tags: ['Engineering', 'ROS2', 'Physical AI', 'Control'],
+  },
+
+  blog6: {
+    kanji: '展', kana: 'Events', category: 'イベント / Events', date: '2026.06.11', readTime: '3分で読めます',
+    coverLabel: 'Exhibition — Notes on Preparation',
+    title: '国際ロボット展に向けて',
+    lead: '出展に向けた準備の記録と、展示するデモンストレーションの狙い。',
+    intro: [
+      '展示会は、私たちにとって発表の場というより、確かめの場です。想定していなかった問いが来る。その問いが次の開発を決めます。',
+      '今回準備しているのは、動きを見せる展示ではなく、触って条件を変えられる展示です。',
+    ],
+    sections: [
+      { heading: '見せるものを絞る', paras: [
+        '限られた時間で伝わることは、多くありません。そこで展示するのは、力制御によって位置のずれを吸収する一点に絞りました。物をわざとずらして置き、それでも作業が成立するところを見ていただきます。',
+        '機能の一覧を並べるより、一つの性質が伝わるほうが、後の会話が深くなると考えています。',
+      ]},
+      { heading: '問いを持ち帰る', paras: [
+        '会場では、現場の条件を持った質問が届きます。それはこちらの想定を超えることが多く、開発の優先順位を組み替える材料になります。',
+        '準備の段階から、記録の担当を置くことにしました。答えられなかった問いこそ持ち帰る価値があります。',
+      ]},
+    ],
+    quoteJa: '展示会は発表の場ではなく、\n確かめの場である。',
+    quoteEn: 'Born in the lab. Built for the real world.',
+    points: [
+      { index: '01', title: '一つの性質に絞る', desc: '機能を並べず、位置のずれを吸収する一点を体験として見せます。' },
+      { index: '02', title: 'わざとずらして置く', desc: '想定どおりでない条件を用意し、そこで成立することを確かめてもらいます。' },
+      { index: '03', title: '答えられない問いを記録する', desc: '会場で届いた想定外の質問を、開発の優先順位を決める材料にします。' },
+    ],
+    closing: '準備の目的は、うまく見せることではありません。持ち帰る問いの数が、その出展の成果になります。',
+    tags: ['Events', 'Exhibition', 'Field', 'Demo'],
+  },
+};
+
+const ORDER = ['featured', 'blog1', 'blog2', 'blog3', 'blog4', 'blog5', 'blog6'];
+
+class Component extends DCLogic {
+  state = { key: null };
+
+  componentDidMount() {
+    this.sync();
+    this._onHash = () => this.sync();
+    window.addEventListener('hashchange', this._onHash);
+    window.addEventListener('popstate', this._onHash);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('hashchange', this._onHash);
+    window.removeEventListener('popstate', this._onHash);
+  }
+
+  sync() {
+    let key = null;
+    try {
+      key = new URLSearchParams(window.location.search).get('post');
+      if (!key && window.location.hash) {
+        const h = window.location.hash.replace(/^#/, '');
+        if (ARTICLES[h]) key = h;
+      }
+    } catch (e) {}
+    this.setState({ key: ARTICLES[key] ? key : 'featured' });
+    if (window.scrollY > 0) window.scrollTo(0, 0);
+  }
+
+  renderVals() {
+    const key = this.state.key || 'featured';
+    const post = ARTICLES[key];
+    const related = ORDER.filter(k => k !== key).slice(0, 3).map(k => ({
+      href: 'blog-article.html?post=' + k,
+      kanji: ARTICLES[k].kanji,
+      kana: ARTICLES[k].kana,
+      date: ARTICLES[k].date,
+      title: ARTICLES[k].title,
+    }));
+    return { post, related };
+  }
+}
+</script>
+</body>
+</html>

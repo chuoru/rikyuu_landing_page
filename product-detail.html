@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/colors_and_type.css">
+  <link rel="stylesheet" href="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/ui_kits/website/kit.css">
+  <script src="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/_ds_bundle.js"></script>
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); }
+    ::-webkit-scrollbar { width: 10px; }
+    ::-webkit-scrollbar-thumb { background: rgba(184,150,46,0.35); }
+  </style>
+</helmet>
+
+<div style="font-family: var(--font-base); background: var(--green-deep); color: var(--cream);">
+
+  <!-- ══════════ NAVBAR ══════════ -->
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; background-color: var(--green-deep); border-bottom: 1px solid rgba(245,240,232,0.10);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between;">
+      <a href="index.html" style="display: flex; align-items: center; gap: 12px;">
+        <div style="width: 36px; height: 36px; border-radius: 50%; overflow: hidden; flex-shrink: 0;">
+          <img src="public/rikyuu_no_text.jpeg" alt="Rikyu Robotics" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <span style="letter-spacing: 0.2em; font-size: 14px; font-weight: 500; color: #F5F0E8;">利休<span style="color: var(--gold); letter-spacing: 0.3em; font-size: 12px; margin-left: 8px; font-weight: 300;">ROBOTICS</span></span>
+      </a>
+      <div style="display: flex; align-items: center; gap: 32px;">
+        <a href="index.html#product" style="font-size: 14px; letter-spacing: 0.1em; color: var(--gold);">製品</a>
+        <a href="index.html#rd" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">研究開発</a>
+        <a href="index.html#events" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">イベント</a>
+        <a href="index.html#company" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">企業情報</a>
+        <a href="blog.html" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">ブログ</a>
+        <a href="index.html#contact" style="font-size: 14px; letter-spacing: 0.1em; color: rgba(245,240,232,0.70);" style-hover="color: var(--gold);">お問い合わせ</a>
+        <button type="button" style="font-size: 12px; letter-spacing: 0.3em; border: 1px solid rgba(184,150,46,0.6); color: var(--gold); background: transparent; padding: 6px 16px; cursor: pointer; transition: all 0.2s;" style-hover="background: var(--gold); color: var(--cream); border-color: var(--gold);">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════ HERO ══════════ -->
+  <header id="top" style="padding: 168px 0 96px; background: var(--green-deep); position: relative; overflow: hidden;">
+    <div style="position: absolute; right: -4%; top: 46%; transform: translateY(-50%); color: rgba(245,240,232,0.03); line-height: 0.8; user-select: none; pointer-events: none; font-size: clamp(200px, 24vw, 320px); font-weight: 300;">箱</div>
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px; position: relative;">
+      <a href="index.html#product" style="display: inline-flex; align-items: center; gap: 10px; color: rgba(245,240,232,0.45); font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono); margin-bottom: 48px;" style-hover="color: var(--gold);">
+        <svg style="width: 12px; height: 12px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 12H5M11 18l-6-6 6-6"></path></svg>
+        製品一覧へ
+      </a>
+
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 28px;">
+        <div style="width: 32px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 12px; text-transform: uppercase; font-family: var(--font-mono);">Star Robox</span>
+      </div>
+
+      <h1 style="margin: 0; color: var(--cream); font-weight: 300; line-height: 1.2; font-size: clamp(40px, 5.4vw, 72px); letter-spacing: 0.01em; text-wrap: pretty;">次世代モジュール型<br>ロボット<span style="color: var(--gold);">セル</span></h1>
+
+      <p style="margin: 32px 0 0; max-width: 620px; color: rgba(245,240,232,0.65); font-size: 16px; line-height: 2; font-weight: 300; text-wrap: pretty;">空間とタスクに完璧にフィットするロボットソリューション。</p>
+      <p style="margin: 12px 0 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase; font-family: var(--font-mono);">The Modular Robot Platform</p>
+
+      <div style="margin-top: 56px; border: 1px solid rgba(245,240,232,0.10); background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 48px; min-height: 380px;">
+        <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/Full_Box_nachi_2026-Jul-13_04-45-47AM-000_CustomizedView13365928721_png_alpha.png" alt="Star Robox" style="max-width: 100%; max-height: 460px; height: auto; display: block; object-fit: contain;">
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════ 01 CONCEPT (cream) ══════════ -->
+  <section style="padding: 112px 0; background: var(--cream); color: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">01</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Concept</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 72px; align-items: start;">
+        <div>
+          <h2 style="margin: 0; color: var(--green-deep); font-weight: 300; line-height: 1.35; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em; text-wrap: pretty;">固定化された<br>自動化からの脱却</h2>
+          <p style="margin: 24px 0 0; color: rgba(26,58,42,0.45); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">すべてを再定義する柔軟性</p>
+          <div style="width: 32px; height: 1px; background: var(--gold); margin-top: 28px;"></div>
+        </div>
+        <div>
+          <p style="margin: 0 0 28px; color: rgba(26,58,42,0.75); font-size: 16px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">一度導入したら変更が効かない従来のロボットシステム。私たちはその常識を覆すため、完全にモジュール化されたプラットフォームを設計しました。</p>
+          <p style="margin: 0; color: rgba(26,58,42,0.75); font-size: 16px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">ビジネスの成長、メニューの変更、プロセスの進化。あらゆる変化に合わせて「セル（箱）」そのものが形を変え、機能を追加し、成長し続けることができます。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 02 ARCHITECTURE (dark) ══════════ -->
+  <section style="padding: 112px 0; background: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">02</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Architecture</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center;">
+        <div>
+          <h2 style="margin: 0; color: var(--cream); font-weight: 300; line-height: 1.35; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em; text-wrap: pretty;">最小構成からの<br>スタート</h2>
+          <p style="margin: 24px 0 36px; color: rgba(245,240,232,0.40); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">ハードウェアの制約をなくす基盤構造</p>
+          <div style="border-top: 1px solid rgba(245,240,232,0.10);">
+            <sc-for list="{{ architecture }}" as="a" hint-placeholder-count="2">
+              <div style="display: flex; align-items: flex-start; gap: 20px; padding: 24px 0; border-bottom: 1px solid rgba(245,240,232,0.10);">
+                <span style="color: rgba(184,150,46,0.7); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; padding-top: 5px; flex-shrink: 0;">{{ a.index }}</span>
+                <div>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 16px; font-weight: 300; letter-spacing: 0.08em;">{{ a.title }}</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.50); font-size: 13px; line-height: 1.95; font-weight: 300; text-wrap: pretty;">{{ a.desc }}</p>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(245,240,232,0.10); background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 40px; min-height: 360px;">
+          <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/Full_Box_nachi_2026-Jul-13_04-45-47AM-000_CustomizedView13365928721_png_alpha.png" alt="Base unit" style="max-width: 100%; max-height: 400px; height: auto; display: block; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 03 CUSTOMIZATION MAP (cream) ══════════ -->
+  <section style="padding: 112px 0; background: var(--cream); color: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 32px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">03</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Customization Map</span>
+      </div>
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; flex-wrap: wrap; margin-bottom: 56px;">
+        <h2 style="margin: 0; color: var(--green-deep); font-weight: 300; line-height: 1.3; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em;">無限の組み合わせ体系図</h2>
+        <p style="margin: 0; color: rgba(26,58,42,0.40); font-size: 12px; letter-spacing: 0.2em; font-family: var(--font-mono);">13 Modules</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px;">
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/01_%E5%B7%A5%E5%A0%B4%E7%94%A8.png" alt="Factory Standard" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">01</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Factory Standard</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/02_monitor%20base.png" alt="Monitor Base" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">02</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Monitor Base</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/03_wood%20base.png" alt="Wood Base" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">03</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Wood Base</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/04_double%20arm.png" alt="Dual Arm Station" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">04</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Dual Arm Station</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/05_%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3.png" alt="Clean Standard" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">05</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Clean Standard</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/06_%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%83%E3%82%B7%E3%83%A5.png" alt="Stylish White" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">06</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Stylish White</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/07_%E6%B8%A9%E3%81%8B%E3%81%BF.png" alt="Warm Wood" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">07</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Warm Wood</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/08_%E3%82%A2%E3%83%BC%E3%83%A0%E3%82%AB%E3%83%90%E3%83%BC.png" alt="Arm Cover" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">08</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Arm Cover</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/09_%E3%83%84%E3%83%A1.png" alt="Custom Claw" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">09</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Custom Claw</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/10_%E3%82%B0%E3%83%AA%E3%83%83%E3%83%91%E3%83%BC.png" alt="Gripper" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">10</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Gripper</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/11_%E4%BA%94%E6%8C%87%E3%83%8F%E3%83%B3%E3%83%89.png" alt="5-Finger Hand" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">11</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">5-Finger Hand</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/12_%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB.png" alt="Table Top" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">12</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">Table Top</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s, transform 0.3s;" style-hover="border-color: rgba(184,150,46,0.6); transform: translateY(-4px);">
+          <div style="aspect-ratio: 1 / 1; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 20px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/13_65%E3%82%A4%E3%83%B3%E3%83%81%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4.png" alt="65&quot; Display" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 16px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <span style="color: rgba(184,150,46,0.8); font-size: 9px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 6px;">13</span>
+            <p style="margin: 0; color: var(--green-deep); font-size: 12px; letter-spacing: 0.12em; font-weight: 300;">65&quot; Display</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 04 SCALE UP : ARMS (dark) ══════════ -->
+  <section style="padding: 112px 0; background: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">04</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Scale Up — Arms</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center;">
+        <div style="border: 1px solid rgba(245,240,232,0.10); background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 40px; min-height: 340px;">
+          <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/04_double%20arm.png" alt="Dual arm station" style="max-width: 100%; max-height: 360px; height: auto; display: block; object-fit: contain;">
+        </div>
+        <div>
+          <h2 style="margin: 0; color: var(--cream); font-weight: 300; line-height: 1.35; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em;">限界のない拡張性</h2>
+          <p style="margin: 24px 0 36px; color: rgba(245,240,232,0.40); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">双腕すら通過点に過ぎない</p>
+          <div style="border-top: 1px solid rgba(245,240,232,0.10);">
+            <sc-for list="{{ arms }}" as="a" hint-placeholder-count="2">
+              <div style="display: flex; align-items: flex-start; gap: 20px; padding: 24px 0; border-bottom: 1px solid rgba(245,240,232,0.10);">
+                <span style="color: rgba(184,150,46,0.7); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; padding-top: 5px; flex-shrink: 0;">{{ a.index }}</span>
+                <div>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 16px; font-weight: 300; letter-spacing: 0.08em;">{{ a.title }}</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.50); font-size: 13px; line-height: 1.95; font-weight: 300; text-wrap: pretty;">{{ a.desc }}</p>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 05 EXTERIORS (cream) ══════════ -->
+  <section style="padding: 112px 0; background: var(--cream); color: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 32px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">05</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Scale Up — Exteriors</span>
+      </div>
+      <h2 style="margin: 0 0 12px; color: var(--green-deep); font-weight: 300; line-height: 1.3; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em;">空間に合わせた外装設計</h2>
+      <p style="margin: 0 0 56px; color: rgba(26,58,42,0.45); font-size: 13px; letter-spacing: 0.2em; font-family: var(--font-mono);">設置環境の景観を損なわない多彩なバリエーション</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px;">
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column;">
+          <div style="aspect-ratio: 4 / 3; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 28px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/06_%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%83%E3%82%B7%E3%83%A5.png" alt="Stylish White" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 28px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <p style="margin: 0 0 8px; color: var(--green-deep); font-size: 18px; font-weight: 300; letter-spacing: 0.08em;">Stylish White</p>
+            <p style="margin: 0; color: rgba(26,58,42,0.55); font-size: 13px; line-height: 1.95; font-weight: 300; text-wrap: pretty;">オフィスやカフェに馴染むクリーンなデザイン</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column;">
+          <div style="aspect-ratio: 4 / 3; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 28px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/07_%E6%B8%A9%E3%81%8B%E3%81%BF.png" alt="Warm Wood" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 28px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <p style="margin: 0 0 8px; color: var(--green-deep); font-size: 18px; font-weight: 300; letter-spacing: 0.08em;">Warm Wood</p>
+            <p style="margin: 0; color: rgba(26,58,42,0.55); font-size: 13px; line-height: 1.95; font-weight: 300; text-wrap: pretty;">高級感と温かみを演出する木目調パネル</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column;">
+          <div style="aspect-ratio: 4 / 3; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 28px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/01_%E5%B7%A5%E5%A0%B4%E7%94%A8.png" alt="Factory Standard" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 28px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <p style="margin: 0 0 8px; color: var(--green-deep); font-size: 18px; font-weight: 300; letter-spacing: 0.08em;">Factory Standard</p>
+            <p style="margin: 0; color: rgba(26,58,42,0.55); font-size: 13px; line-height: 1.95; font-weight: 300; text-wrap: pretty;">堅牢性と安全性を重視した工業向け仕様</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 06 END-EFFECTORS (dark) ══════════ -->
+  <section style="padding: 112px 0; background: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">06</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">End-Effectors</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center;">
+        <div>
+          <h2 style="margin: 0; color: var(--cream); font-weight: 300; line-height: 1.35; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em; text-wrap: pretty;">あらゆるタスクを<br>可能にする「手」</h2>
+          <p style="margin: 24px 0 32px; color: rgba(245,240,232,0.40); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">完全自社開発・オーダーメイド設計</p>
+          <div style="width: 32px; height: 1px; background: var(--gold); margin-bottom: 32px;"></div>
+          <p style="margin: 0 0 28px; color: rgba(245,240,232,0.70); font-size: 15px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">ロボットの真の能力は、アームの先端につくグリッパー（エンドエフェクタ）で決まります。</p>
+          <p style="margin: 0 0 28px; color: rgba(245,240,232,0.70); font-size: 15px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">既存のツールに縛られず、シリコン等を用いてシチュエーションに合わせた最適なものを提案。柔らかい食材や特殊形状のピッキングなど、お客様の特定のタスクに完璧に適合する「独自の専用グリッパー」をゼロから設計・開発いたします。</p>
+          <p style="margin: 0; color: rgba(245,240,232,0.70); font-size: 15px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">また、グリッパー以外のシリコン部品についても設計・製造が可能です。</p>
+        </div>
+        <div style="border: 1px solid rgba(245,240,232,0.10); background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 40px; min-height: 360px;">
+          <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/10_%E3%82%B0%E3%83%AA%E3%83%83%E3%83%91%E3%83%BC.png" alt="Gripper" style="max-width: 100%; max-height: 380px; height: auto; display: block; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 07 GRIPPER SHOWCASE (cream) ══════════ -->
+  <section style="padding: 112px 0; background: var(--cream); color: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 32px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">07</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Gripper Showcase</span>
+      </div>
+      <h2 style="margin: 0 0 56px; color: var(--green-deep); font-weight: 300; line-height: 1.3; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em;">多彩なハンド・パーツ群</h2>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px;">
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column;">
+          <div style="aspect-ratio: 4 / 3; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 28px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/09_%E3%83%84%E3%83%A1.png" alt="専用設計のグリッパー" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 24px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <p style="margin: 0; color: var(--green-deep); font-size: 16px; font-weight: 300; letter-spacing: 0.1em;">専用設計のグリッパー</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column;">
+          <div style="aspect-ratio: 4 / 3; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 28px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/11_%E4%BA%94%E6%8C%87%E3%83%8F%E3%83%B3%E3%83%89.png" alt="五指ハンド" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 24px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <p style="margin: 0; color: var(--green-deep); font-size: 16px; font-weight: 300; letter-spacing: 0.1em;">五指ハンド</p>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column;">
+          <div style="aspect-ratio: 4 / 3; background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 28px;">
+            <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/08_%E3%82%A2%E3%83%BC%E3%83%A0%E3%82%AB%E3%83%90%E3%83%BC.png" alt="保護アームカバー" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+          </div>
+          <div style="padding: 24px; border-top: 1px solid rgba(26,58,42,0.12);">
+            <p style="margin: 0; color: var(--green-deep); font-size: 16px; font-weight: 300; letter-spacing: 0.1em;">保護アームカバー</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 08 DISPLAY & SIGNAGE (dark) ══════════ -->
+  <section style="padding: 112px 0; background: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">08</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Display &amp; Signage</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center;">
+        <div>
+          <h2 style="margin: 0; color: var(--cream); font-weight: 300; line-height: 1.35; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em;">LEDパネル・サイネージ</h2>
+          <p style="margin: 24px 0 36px; color: rgba(245,240,232,0.40); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">ロボット自体がメディアになる</p>
+          <div style="border-top: 1px solid rgba(245,240,232,0.10);">
+            <sc-for list="{{ display }}" as="d" hint-placeholder-count="3">
+              <div style="display: flex; align-items: flex-start; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(245,240,232,0.10);">
+                <span style="color: rgba(184,150,46,0.7); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; padding-top: 5px; flex-shrink: 0;">{{ d.index }}</span>
+                <div>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 15px; font-weight: 300; letter-spacing: 0.08em;">{{ d.title }}</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.50); font-size: 13px; line-height: 1.95; font-weight: 300; text-wrap: pretty;">{{ d.desc }}</p>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(245,240,232,0.10); background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 40px; min-height: 340px;">
+          <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/13_65%E3%82%A4%E3%83%B3%E3%83%81%E3%83%87%E3%82%A3%E3%82%B9%E3%83%97%E3%83%AC%E3%82%A4.png" alt="Display module" style="max-width: 100%; max-height: 360px; height: auto; display: block; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 09 DRESS-UP (cream) ══════════ -->
+  <section style="padding: 112px 0; background: var(--cream); color: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">09</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Dress-Up</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center;">
+        <div style="border: 1px solid rgba(26,58,42,0.12); background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 40px; min-height: 340px;">
+          <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/05_%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3.png" alt="Dress-up" style="max-width: 100%; max-height: 360px; height: auto; display: block; object-fit: contain;">
+        </div>
+        <div>
+          <h2 style="margin: 0; color: var(--green-deep); font-weight: 300; line-height: 1.35; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em;">外装ドレスアップ</h2>
+          <p style="margin: 24px 0 36px; color: rgba(26,58,42,0.45); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">デザインを完全にカスタマイズ</p>
+          <div style="border-top: 1px solid rgba(26,58,42,0.12);">
+            <sc-for list="{{ dressUp }}" as="d" hint-placeholder-count="3">
+              <div style="display: flex; align-items: flex-start; gap: 20px; padding: 22px 0; border-bottom: 1px solid rgba(26,58,42,0.12);">
+                <span style="color: rgba(184,150,46,0.8); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; padding-top: 5px; flex-shrink: 0;">{{ d.index }}</span>
+                <div>
+                  <p style="margin: 0 0 6px; color: var(--green-deep); font-size: 15px; font-weight: 300; letter-spacing: 0.08em;">{{ d.title }}</p>
+                  <p style="margin: 0; color: rgba(26,58,42,0.55); font-size: 13px; line-height: 1.95; font-weight: 300; text-wrap: pretty;">{{ d.desc }}</p>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 10 SMART CONTROL : AI (dark) ══════════ -->
+  <section style="padding: 112px 0; background: var(--green-deep); position: relative; overflow: hidden;">
+    <div style="position: absolute; left: -3%; top: 50%; transform: translateY(-50%); color: rgba(245,240,232,0.03); line-height: 0.8; user-select: none; pointer-events: none; font-size: clamp(180px, 22vw, 300px); font-weight: 300;">言</div>
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px; position: relative;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">10</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Smart Control — AI</span>
+      </div>
+      <h2 style="margin: 0 0 12px; color: var(--cream); font-weight: 300; line-height: 1.3; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em;">言語による直感的な制御</h2>
+      <p style="margin: 0 0 56px; color: rgba(245,240,232,0.40); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">AIを活用した次世代コントロール</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px;">
+        <sc-for list="{{ control }}" as="c" hint-placeholder-count="2">
+          <div style="border: 1px solid rgba(245,240,232,0.10); padding: 40px;">
+            <span style="color: rgba(184,150,46,0.8); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.2em; display: block; margin-bottom: 20px;">{{ c.index }}</span>
+            <p style="margin: 0 0 16px; color: var(--cream); font-size: 20px; font-weight: 300; letter-spacing: 0.08em;">{{ c.title }}</p>
+            <div style="width: 24px; height: 1px; background: var(--gold); margin-bottom: 20px;"></div>
+            <p style="margin: 0; color: rgba(245,240,232,0.60); font-size: 14px; line-height: 2; font-weight: 300; text-wrap: pretty;">{{ c.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 11 VISION (cream) ══════════ -->
+  <section style="padding: 112px 0; background: var(--cream); color: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">11</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Smart Control — Vision</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center;">
+        <div>
+          <h2 style="margin: 0; color: var(--green-deep); font-weight: 300; line-height: 1.35; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em; text-wrap: pretty;">視覚フィードバックによる自律制御</h2>
+          <p style="margin: 24px 0 32px; color: rgba(26,58,42,0.45); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">ビジュアルサーボイング標準搭載</p>
+          <div style="width: 32px; height: 1px; background: var(--gold); margin-bottom: 32px;"></div>
+          <p style="margin: 0 0 28px; color: rgba(26,58,42,0.75); font-size: 15px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">あらかじめ決められた座標へ機械的に動くだけのロボットではありません。</p>
+          <p style="margin: 0; color: rgba(26,58,42,0.75); font-size: 15px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">カメラとセンサー群が対象物を常に認識し、対象が数ミリずれていた場合や不規則な形状の食材でも、人間の手のような精密で柔軟な軌道修正を自動で行います。</p>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 40px; min-height: 360px;">
+          <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/Full_Box_nachi_2026-Jul-13_04-46-27AM-000_CustomizedView41866483386_png_alpha.png" alt="Vision system" style="max-width: 100%; max-height: 380px; height: auto; display: block; object-fit: contain;">
+        </div>
+      </div>
+
+      <div style="margin-top: 72px;">
+        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 24px;">
+          <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+          <span style="color: var(--gold); letter-spacing: 0.35em; font-size: 10px; text-transform: uppercase; font-family: var(--font-mono);">実機稼働映像 — SmartOne 北九州</span>
+        </div>
+        <div style="border: 1px solid rgba(26,58,42,0.12); background: #0F2419;">
+          <video src="https://lustrous-melba-54b4e3.netlify.app/assets/video/SmartOne%E5%8C%97%E4%B9%9D%E5%B7%9E.mp4" controls playsInline preload="metadata" style="width: 100%; height: auto; display: block; aspect-ratio: 16 / 9; background: #0F2419;"></video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 12 INTEGRATION (dark) ══════════ -->
+  <section style="padding: 112px 0; background: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">12</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Integration</span>
+      </div>
+      <h2 style="margin: 0 0 12px; color: var(--cream); font-weight: 300; line-height: 1.35; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em; text-wrap: pretty;">既存の設備を活かした<br>システム連動</h2>
+      <p style="margin: 0 0 56px; color: rgba(245,240,232,0.40); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">各種オーダー・決済システムとシームレスに統合</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+        <sc-for list="{{ integration }}" as="i" hint-placeholder-count="3">
+          <div style="border: 1px solid rgba(245,240,232,0.10); padding: 36px;">
+            <span style="color: rgba(184,150,46,0.8); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.2em; display: block; margin-bottom: 20px;">{{ i.index }}</span>
+            <p style="margin: 0 0 16px; color: var(--cream); font-size: 17px; font-weight: 300; letter-spacing: 0.08em; text-wrap: pretty;">{{ i.title }}</p>
+            <div style="width: 24px; height: 1px; background: var(--gold); margin-bottom: 20px;"></div>
+            <p style="margin: 0; color: rgba(245,240,232,0.55); font-size: 13px; line-height: 2; font-weight: 300; text-wrap: pretty;">{{ i.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 13 MAINTENANCE (cream) ══════════ -->
+  <section style="padding: 112px 0; background: var(--cream); color: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">13</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Maintenance</span>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 64px; align-items: center;">
+        <div style="border: 1px solid rgba(26,58,42,0.12); background: rgba(26,58,42,0.03); display: flex; align-items: center; justify-content: center; padding: 40px; min-height: 340px;">
+          <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/Full_Box_nachi_2026-Jul-13_04-47-59AM-000_CustomizedView1427209226_png_alpha.png" alt="Digital twin" style="max-width: 100%; max-height: 360px; height: auto; display: block; object-fit: contain;">
+        </div>
+        <div>
+          <h2 style="margin: 0; color: var(--green-deep); font-weight: 300; line-height: 1.35; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em; text-wrap: pretty;">デジタルツインによる<br>完全保守体制</h2>
+          <p style="margin: 24px 0 32px; color: rgba(26,58,42,0.45); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">バーチャル空間でエラーを即座に特定</p>
+          <div style="width: 32px; height: 1px; background: var(--gold); margin-bottom: 32px;"></div>
+          <p style="margin: 0 0 28px; color: rgba(26,58,42,0.75); font-size: 15px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">稼働状況は常にクラウドへ送信され、バーチャル空間上に「デジタルツイン」としてセルが再現されています。</p>
+          <p style="margin: 0; color: rgba(26,58,42,0.75); font-size: 15px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">トラブル時は遠隔から解析し、原因（プログラムの不具合か、物理的干渉か）を瞬時に特定。全国の保守チームが迅速に対応します。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 14 CASE STUDIES (dark) ══════════ -->
+  <section style="padding: 112px 0; background: var(--green-deep);">
+    <div style="max-width: 1152px; margin: 0 auto; padding: 0 40px;">
+      <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">14</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Case Studies</span>
+      </div>
+      <h2 style="margin: 0 0 12px; color: var(--cream); font-weight: 300; line-height: 1.3; font-size: clamp(30px, 3.4vw, 42px); letter-spacing: 0.06em;">実績例</h2>
+      <p style="margin: 0 0 48px; color: rgba(245,240,232,0.40); font-size: 13px; letter-spacing: 0.22em; font-family: var(--font-mono);">現場で稼働するセルの記録</p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; max-width: 760px;">
+        <div style="border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column;">
+          <a href="https://youtube.com/shorts/AGwB_mhl1Lg" target="_blank" rel="noopener" style="position: relative; aspect-ratio: 9 / 16; background: #0F2419; display: block; overflow: hidden;" style-hover="opacity: 0.92;">
+            <img src="https://i.ytimg.com/vi/AGwB_mhl1Lg/oardefault.jpg" alt="実機稼働の様子" onError="{{ thumbFallback }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+              <span style="width: 64px; height: 64px; border: 1px solid rgba(184,150,46,0.9); background: rgba(26,58,42,0.55); display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 20px; height: 20px; color: var(--gold); margin-left: 3px;" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+              </span>
+            </span>
+            <span style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(15,36,25,0.9), rgba(15,36,25,0)); color: rgba(245,240,232,0.85); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-family: var(--font-mono);">YouTube Shorts</span>
+          </a>
+          <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+            <span style="color: rgba(184,150,46,0.7); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.2em; display: block; margin-bottom: 12px;">01</span>
+            <p style="margin: 0 0 6px; color: var(--cream); font-size: 18px; font-weight: 300; letter-spacing: 0.08em;">実機稼働の様子</p>
+            <p style="margin: 0 0 16px; color: rgba(245,240,232,0.35); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Deployment — Case 01</p>
+            <a href="https://youtube.com/shorts/AGwB_mhl1Lg" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">YouTube で見る
+              <svg style="width: 11px; height: 11px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </a>
+          </div>
+        </div>
+        <div style="border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column;">
+          <a href="https://youtube.com/shorts/yakIqjXNLiI" target="_blank" rel="noopener" style="position: relative; aspect-ratio: 9 / 16; background: #0F2419; display: block; overflow: hidden;" style-hover="opacity: 0.92;">
+            <img src="https://i.ytimg.com/vi/yakIqjXNLiI/oardefault.jpg" alt="実機稼働の様子" onError="{{ thumbFallback }}" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+            <span style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;">
+              <span style="width: 64px; height: 64px; border: 1px solid rgba(184,150,46,0.9); background: rgba(26,58,42,0.55); display: flex; align-items: center; justify-content: center;">
+                <svg style="width: 20px; height: 20px; color: var(--gold); margin-left: 3px;" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+              </span>
+            </span>
+            <span style="position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(15,36,25,0.9), rgba(15,36,25,0)); color: rgba(245,240,232,0.85); font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-family: var(--font-mono);">YouTube Shorts</span>
+          </a>
+          <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+            <span style="color: rgba(184,150,46,0.7); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.2em; display: block; margin-bottom: 12px;">02</span>
+            <p style="margin: 0 0 6px; color: var(--cream); font-size: 18px; font-weight: 300; letter-spacing: 0.08em;">実機稼働の様子</p>
+            <p style="margin: 0 0 16px; color: rgba(245,240,232,0.35); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Deployment — Case 02</p>
+            <a href="https://youtube.com/shorts/yakIqjXNLiI" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">YouTube で見る
+              <svg style="width: 11px; height: 11px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M13 6l6 6-6 6"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ 15 EXPERIENCE / CTA (cream) ══════════ -->
+  <section style="padding: 144px 0; background: var(--cream); color: var(--green-deep); position: relative; overflow: hidden;">
+    <div style="position: absolute; right: -2%; top: 50%; transform: translateY(-50%); color: rgba(26,58,42,0.03); line-height: 0.8; user-select: none; pointer-events: none; font-size: clamp(200px, 26vw, 340px); font-weight: 300;">縁</div>
+    <div style="max-width: 800px; margin: 0 auto; padding: 0 40px; position: relative; text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 40px;">
+        <span style="color: rgba(184,150,46,0.8); font-size: 11px; letter-spacing: 0.2em; font-family: var(--font-mono);">15</span>
+        <div style="width: 24px; height: 1px; background: var(--gold);"></div>
+        <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 11px; text-transform: uppercase; font-family: var(--font-mono);">Experience</span>
+      </div>
+      <h2 style="margin: 0; color: var(--green-deep); font-weight: 300; line-height: 1.3; font-size: clamp(32px, 3.8vw, 46px); letter-spacing: 0.08em;">実機体験ショールーム</h2>
+      <div style="width: 32px; height: 1px; background: var(--gold); margin: 32px auto;"></div>
+      <p style="margin: 0 auto; max-width: 560px; color: rgba(26,58,42,0.70); font-size: 15px; line-height: 2.1; font-weight: 300; text-wrap: pretty;">各モジュールや実際の動作は、専用展示スペースにてご覧いただけます。完全オーダーメイドのご相談も承っております。</p>
+      <div style="display: flex; justify-content: center; gap: 20px; margin-top: 56px; flex-wrap: wrap;">
+        <a href="index.html#contact" style="border: 1px solid var(--gold); color: var(--gold); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; padding: 16px 44px; font-family: var(--font-mono); transition: all 0.3s;" style-hover="background: var(--gold); color: var(--cream);">お問い合わせ</a>
+        <a href="index.html#custom" style="border: 1px solid rgba(26,58,42,0.25); color: rgba(26,58,42,0.70); font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; padding: 16px 44px; font-family: var(--font-mono); transition: all 0.3s;" style-hover="border-color: var(--gold); color: var(--gold);">カストマイズ製品</a>
+      </div>
+      <p style="margin: 64px 0 0; color: rgba(26,58,42,0.35); font-size: 10px; letter-spacing: 0.4em; text-transform: uppercase; font-family: var(--font-mono);">The Modular Robot Platform</p>
+    </div>
+  </section>
+
+  <!-- ══════════ FOOTER ══════════ -->
+  <footer style="background: var(--green-deep); padding: 48px 40px; border-top: 1px solid rgba(245,240,232,0.10);">
+    <div style="max-width: 1152px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="color: rgba(245,240,232,0.80); letter-spacing: 0.2em; font-size: 14px;">利休</span>
+        <span style="color: rgba(184,150,46,0.60); letter-spacing: 0.4em; font-size: 12px;">ROBOTICS</span>
+      </div>
+      <p style="margin: 0; color: rgba(245,240,232,0.30); font-size: 12px; letter-spacing: 0.1em;">© 2026 株式会社利休 All rights reserved.</p>
+      <a href="index.html" style="color: rgba(245,240,232,0.40); font-size: 12px; letter-spacing: 0.1em;" style-hover="color: var(--gold);">← トップへ戻る</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const BASE = 'https://lustrous-melba-54b4e3.netlify.app/assets/images/';
+const url = (name) => BASE + encodeURIComponent(name);
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      thumbFallback: (e) => {
+        const el = e.currentTarget;
+        if (el.dataset.fell) return;
+        el.dataset.fell = '1';
+        el.src = el.src.replace('/oardefault.jpg', '/hqdefault.jpg');
+      },
+      architecture: [
+        { index: '01', title: '1本のアームからのスモールスタート', desc: '堅牢なアルミフレームをベースに、初期投資を極限まで抑制。' },
+        { index: '02', title: 'マルチベンダー・アーム対応', desc: '国やメーカーを問わず、タスクと予算に合わせた最適なアームを選択可能。' },
+      ],
+      arms: [
+        { index: '01', title: '自由なアーム増設', desc: 'タスクの複雑化に合わせて、既存のセルにアームとモジュールを後から追加可能。' },
+        { index: '02', title: '異機種混在コントロール', desc: '複数メーカーのアームを1つのセル内で協調動作させる独自の技術。' },
+      ],
+      display: [
+        { index: '01', title: '大型ディスプレイ搭載', desc: '65インチ等の大型モニタをセルに組み込み可能。' },
+        { index: '02', title: '全面LEDパネル化', desc: '正面上部・下部・側面など、あらゆる面をLED化。' },
+        { index: '03', title: '体験型広告の実現', desc: '単なる情報表示にとどまらず、カメラやセンサーと連動したインタラクティブな演出が可能。' },
+      ],
+      dressUp: [
+        { index: '01', title: 'カッティングシート装飾', desc: 'ロボット本体やセル外装パネルをブランドカラーに装飾。' },
+        { index: '02', title: 'シーン別デザイン', desc: '飲食店への導入時はクリーンさや温かみのあるデザインを。' },
+        { index: '03', title: '安全管理・視認性向上', desc: '工場等の工業用途では、視認性を高める目印やカラーリングをトータルデザイン。' },
+      ],
+      control: [
+        { index: '01', title: '自然言語指示', desc: '「カップを3センチ右へ移動して」などの言葉でAIが自動的にプログラムを修正。現場スタッフが直感的に微調整可能です。' },
+        { index: '02', title: '従来のティーチング', desc: 'ミリ単位の精度が求められる工程では、ダイレクトティーチングやオフラインプログラミングも完全にサポート。' },
+      ],
+      integration: [
+        { index: '01', title: '店舗・決済システム連携', desc: 'POSレジや各種決済端末とAPI連携し、オーダー完了をトリガーに全自動稼働。' },
+        { index: '02', title: 'KDS（キッチンディスプレイ）連携', desc: 'KDSと連動し、人間のスタッフとロボットが受注状況を共有・協調作業。' },
+        { index: '03', title: '工場生産システム（MES/ERP）', desc: 'データが分断されることなく、受注から製造までを自動化。' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

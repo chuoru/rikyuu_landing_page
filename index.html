@@ -10,6 +10,7 @@
 <helmet>
   <link rel="stylesheet" href="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/colors_and_type.css">
   <link rel="stylesheet" href="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/ui_kits/website/kit.css">
+  <script src="_ds/design-system-65c02697-ef27-46be-8e5a-6373ad35a1d7/_ds_bundle.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="image-slot.js"></script>
   <style>
@@ -156,8 +157,11 @@
         <div style="width: 32px; height: 1px; background: var(--gold);"></div>
         <span style="color: var(--gold); letter-spacing: 0.4em; font-size: 12px; text-transform: uppercase;">製品</span>
       </div>
-      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 48px;">
-        <h2 style="margin: 0; color: var(--cream); font-weight: 300; line-height: 1.2; font-size: 44px; letter-spacing: 0.2em;">製品ラインナップ</h2>
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+        <div>
+          <h2 style="margin: 0 0 10px; color: var(--cream); font-weight: 300; line-height: 1.25; font-size: 44px; letter-spacing: 0.15em;">スマートロボックス</h2>
+          <p style="margin: 0; color: rgba(245,240,232,0.40); font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; font-family: var(--font-mono);">Star Robox — Modular Robot Cell</p>
+        </div>
         <div style="display: flex; align-items: center; gap: 28px;">
           <span style="color: rgba(245,240,232,0.50); font-size: 12px; letter-spacing: 0.25em; font-family: var(--font-mono);">{{ counter }}</span>
           <div style="display: flex; gap: 12px;">
@@ -171,23 +175,99 @@
         </div>
       </div>
 
+      <p style="margin: 32px 0 48px; max-width: 620px; color: rgba(245,240,232,0.65); font-size: 15px; line-height: 2; font-weight: 300; text-wrap: pretty;">1台のモジュール型プラットフォームが、設置環境とタスクに合わせて姿を変えます。以下は代表的な構成例です。</p>
+
       <!-- Horizontal slider — 5 slides × 2 products -->
       <div style="overflow: hidden;">
         <div style="display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.1, 1); transform: {{ trackTransform }};">
-          <sc-for list="{{ slides }}" as="slide" hint-placeholder-count="5">
             <div style="flex: 0 0 100%; display: flex; gap: 24px; box-sizing: border-box;">
-              <sc-for list="{{ slide.items }}" as="p" hint-placeholder-count="2">
-                <div style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s;" style-hover="border-color: rgba(184,150,46,0.50);">
-                  <div style="position: relative; aspect-ratio: 16 / 10; background: #0F2419; overflow: hidden;">
-                    <image-slot id="{{ p.id }}" shape="rect" placeholder="画像をドロップ"></image-slot>
-                  </div>
-                  <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
-                    <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">{{ p.index }}</span>
-                    <p style="margin: 0; color: var(--cream); font-size: 20px; letter-spacing: 0.1em; font-weight: 300; margin-bottom: 6px;">製品名</p>
-                    <p style="margin: 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Coming Soon</p>
-                  </div>
+              <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
+                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/01_%E5%B7%A5%E5%A0%B4%E7%94%A8.png" alt="Factory Standard" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
                 </div>
-              </sc-for>
+                <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+                  <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">01</span>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 20px; letter-spacing: 0.1em; font-weight: 300;">工場用スタンダード</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Factory Standard</p>
+                </div>
+              </a>
+              <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
+                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/02_monitor%20base.png" alt="Monitor Base" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                </div>
+                <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+                  <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">02</span>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 20px; letter-spacing: 0.1em; font-weight: 300;">モニターベース</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Monitor Base</p>
+                </div>
+              </a>
+            </div>
+            <div style="flex: 0 0 100%; display: flex; gap: 24px; box-sizing: border-box;">
+              <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
+                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/03_wood%20base.png" alt="Wood Base" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                </div>
+                <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+                  <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">03</span>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 20px; letter-spacing: 0.1em; font-weight: 300;">ウッドベース</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Wood Base</p>
+                </div>
+              </a>
+              <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
+                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/04_double%20arm.png" alt="Dual Arm Station" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                </div>
+                <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+                  <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">04</span>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 20px; letter-spacing: 0.1em; font-weight: 300;">双腕ステーション</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Dual Arm Station</p>
+                </div>
+              </a>
+            </div>
+            <div style="flex: 0 0 100%; display: flex; gap: 24px; box-sizing: border-box;">
+              <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
+                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/05_%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3.png" alt="Clean Standard" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                </div>
+                <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+                  <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">05</span>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 20px; letter-spacing: 0.1em; font-weight: 300;">クリーンスタンダード</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Clean Standard</p>
+                </div>
+              </a>
+              <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
+                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/06_%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AA%E3%83%83%E3%82%B7%E3%83%A5.png" alt="Stylish White" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                </div>
+                <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+                  <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">06</span>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 20px; letter-spacing: 0.1em; font-weight: 300;">スタイリッシュホワイト</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Stylish White</p>
+                </div>
+              </a>
+            </div>
+            <div style="flex: 0 0 100%; display: flex; gap: 24px; box-sizing: border-box;">
+              <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
+                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/07_%E6%B8%A9%E3%81%8B%E3%81%BF.png" alt="Warm Wood" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                </div>
+                <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+                  <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">07</span>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 20px; letter-spacing: 0.1em; font-weight: 300;">ウォームウッド</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Warm Wood</p>
+                </div>
+              </a>
+              <a href="product-detail.html" style="flex: 1; border: 1px solid rgba(245,240,232,0.10); display: flex; flex-direction: column; transition: border-color 0.3s; text-decoration: none;" style-hover="border-color: rgba(184,150,46,0.50);">
+                <div style="aspect-ratio: 16 / 10; background: #0F2419; display: flex; align-items: center; justify-content: center; padding: 24px;">
+                  <img src="https://lustrous-melba-54b4e3.netlify.app/assets/images/12_%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB.png" alt="Table Top" style="max-width: 100%; max-height: 100%; height: auto; display: block; object-fit: contain;">
+                </div>
+                <div style="padding: 24px; border-top: 1px solid rgba(245,240,232,0.10);">
+                  <span style="color: rgba(184,150,46,0.6); font-size: 10px; font-family: var(--font-mono); letter-spacing: 0.15em; display: block; margin-bottom: 12px;">08</span>
+                  <p style="margin: 0 0 6px; color: var(--cream); font-size: 20px; letter-spacing: 0.1em; font-weight: 300;">テーブルトップ</p>
+                  <p style="margin: 0; color: rgba(245,240,232,0.35); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-family: var(--font-mono);">Table Top</p>
+                </div>
+              </a>
+            </div>
             </div>
           </sc-for>
         </div>
@@ -345,7 +425,7 @@
           <p style="margin: 0; color: rgba(26,58,42,0.60); font-size: 14px; line-height: 2;">ご質問・ご相談・ご提案など、お気軽にお問い合わせください。担当者より折り返しご連絡いたします。</p>
           <div style="margin-top: 40px;">
             <p style="margin: 0; color: rgba(26,58,42,0.40); font-size: 12px; letter-spacing: 0.1em; margin-bottom: 8px;">または直接メールにて</p>
-            <a href="mailto:info@rikyuu-robotics.com" style="color: var(--gold); font-size: 14px; letter-spacing: 0.05em; text-decoration: none; transition: color 0.2s;" style-hover="color: var(--gold-light);">info@rikyuu-robotics.com</a>
+            <a href="mailto:info@rikyurobotics.com" style="color: var(--gold); font-size: 14px; letter-spacing: 0.05em; text-decoration: none; transition: color 0.2s;" style-hover="color: var(--gold-light);">info@rikyurobotics.com</a>
           </div>
         </div>
 
@@ -572,20 +652,14 @@ class Component extends DCLogic {
         { text: '一歩先の視点', color: gold },
         { text: 'で、社会に新しい価値を提供し続ける。', color: '' },
       ],
-      slides: (() => {
-        const prods = Array.from({ length: 10 }, (_, i) => ({ index: String(i + 1).padStart(2, '0'), id: 'p' + (i + 1) }));
-        const out = [];
-        for (let i = 0; i < prods.length; i += 2) out.push({ items: prods.slice(i, i + 2) });
-        return out;
-      })(),
-      counter: String(this.state.slide + 1).padStart(2, '0') + ' / 05',
+      counter: String(this.state.slide + 1).padStart(2, '0') + ' / 04',
       trackTransform: 'translateX(-' + (this.state.slide * 100) + '%)',
-      dots: Array.from({ length: 5 }, (_, i) => ({
+      dots: Array.from({ length: 4 }, (_, i) => ({
         color: i === this.state.slide ? '#B8962E' : 'rgba(245,240,232,0.2)',
         onClick: () => this.setState({ slide: i }),
       })),
-      onPrev: () => this.setState(s => ({ slide: (s.slide + 4) % 5 })),
-      onNext: () => this.setState(s => ({ slide: (s.slide + 1) % 5 })),
+      onPrev: () => this.setState(s => ({ slide: (s.slide + 3) % 4 })),
+      onNext: () => this.setState(s => ({ slide: (s.slide + 1) % 4 })),
       research: [
         { index: '01', title: 'DEPENDABLE', desc: '初日から稼働できるロボット' },
         { index: '02', title: 'EVOLVING', desc: '経験から学び、進化するロボット' },
@@ -593,18 +667,17 @@ class Component extends DCLogic {
       ],
       company: [
         { label: '会社名', en: 'Company', value: '株式会社利休 / Rikyu Co., Ltd.' },
-        { label: '設立', en: 'Founded', value: '2026年' },
-        { label: '代表者', en: 'Representative', value: '代表取締役 —' },
-        { label: '所在地', en: 'Location', value: '名古屋市' },
+        { label: '設立', en: 'Founded', value: '2026年6月11日' },
+        { label: '代表者', en: 'Representative', value: '代表取締役　林　賢一' },
+        { label: '所在地', en: 'Location', value: '愛知県名古屋市瑞穂区下坂町１丁目２７番地' },
         { label: '事業内容', en: 'Business', value: 'ロボティクスの研究開発・製造・販売\n身体性AI（Physical AI）の開発' },
-        { label: '資本金', en: 'Capital', value: '—' },
-        { label: 'お問い合わせ', en: 'Contact', value: 'info@rikyuu-robotics.com' },
+        { label: '資本金', en: 'Capital', value: '800万円' },
+        { label: 'お問い合わせ', en: 'Contact', value: 'info@rikyurobotics.com' },
       ],
       events: [
-        { date: '2026.09.24', tag: 'Exhibition', title: '国際ロボット展 2026', venue: '東京ビッグサイト 東ホール', status: '出展予定' },
-        { date: '2026.11.12', tag: 'Summit', title: 'Physical AI Summit', venue: '京都国際会館', status: '登壇予定' },
-        { date: '2027.02.18', tag: 'Seminar', title: '技術説明会 — 本質から', venue: 'オンライン開催', status: '準備中' },
-        { date: '2027.03.05', tag: 'Open Lab', title: 'ラボ公開デモンストレーション', venue: '利休ロボティクス 本社', status: '準備中' },
+        { date: '2026.06.11', tag: 'Exhibition', title: 'ROBOT TECHNOLOGY JAPAN 2026', venue: 'Aichi Sky Expo', status: '出展' },
+        { date: '2026.11.19', tag: 'Exhibition', title: '次世代ものづくり基盤技術産業展 — TECH Biz EXPO 2026 —', venue: 'ポートメッセなごや', status: '出展予定' },
+        { date: '2026.12.02', tag: 'Exhibition', title: 'RoboNext2026', venue: 'インテックス大阪', status: '出展予定' },
       ],
       capabilities: [
         { index: '01', title: 'かしこさ（インテリジェンス）', desc: '状況に合わせて動きを変え、自動で最適な作業を選びます' },
