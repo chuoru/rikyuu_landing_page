@@ -242,7 +242,7 @@
         <sc-if value="{{ showPhotoCard }}" hint-placeholder-val="{{ true }}">
           <figure style="margin: 0; border: 1px solid rgba(26,58,42,0.12); display: flex; flex-direction: column; transition: border-color 0.3s;" style-hover="border-color: rgba(184,150,46,0.5);">
             <div style="position: relative; aspect-ratio: 4 / 3; background: rgba(26,58,42,0.04); overflow: hidden;">
-              <img src="uploads/画像デモ.png" alt="画像認識デモ" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
+              <img src="uploads/%E7%94%BB%E5%83%8F%E3%83%86%E3%82%99%E3%83%A2.png" alt="画像認識デモ" style="position: absolute; inset: 0; width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;">
             </div>
             <figcaption style="padding: 22px; border-top: 1px solid rgba(26,58,42,0.12);">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
@@ -392,8 +392,8 @@ class Component extends DCLogic {
       showPanelCard: active === 'すべて' || active === '開発風景',
       showSceneCard: active === 'すべて' || active === '開発風景',
       videos: [
-        { id: 'labvid1', index: '01', title: '展示会ワインロボデモ機', date: '2026.08.20', hasVideo: true, noVideo: false, poster: 'assets/poster-wine-robot.jpg', src: 'uploads/展示会ワインロボ.mp4' },
-        { id: 'labvid2', index: '02', title: 'ロボットハンド設計製作', date: '2026.07.10', hasVideo: true, noVideo: false, poster: 'assets/poster-robot-hand.jpg', src: 'uploads/ロボットハンドプリント.mp4' },
+        { id: 'labvid1', index: '01', title: '展示会ワインロボデモ機', date: '2026.08.20', hasVideo: true, noVideo: false, poster: 'assets/poster-wine-robot.jpg', src: 'uploads/%E5%B1%95%E7%A4%BA%E4%BC%9A%E3%83%AF%E3%82%A4%E3%83%B3%E3%83%AD%E3%83%9B%E3%82%99.mp4' },
+        { id: 'labvid2', index: '02', title: 'ロボットハンド設計製作', date: '2026.07.10', hasVideo: true, noVideo: false, poster: 'assets/poster-robot-hand.jpg', src: 'uploads/%E3%83%AD%E3%83%9B%E3%82%99%E3%83%83%E3%83%88%E3%83%8F%E3%83%B3%E3%83%88%E3%82%99%E3%83%95%E3%82%9A%E3%83%AA%E3%83%B3%E3%83%88.mp4' },
       ],
       materials: [
         { id: 'labdoc1', kind: 'Catalog', title: 'スマートロボックス 製品カタログ', meta: '全16ページ / 株式会社利休', hasCover: true, noCover: false, href: 'rikyu-catalog.html', target: '_blank', pending: false },

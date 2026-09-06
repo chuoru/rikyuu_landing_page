@@ -3,3 +3,9 @@ Thumbs.db
 *.key
 *.pem
 *.ppk
+
+# Large media pushed directly to the server via scp instead of git,
+# since GitHub's push endpoint times out uploading them over this
+# connection's bandwidth. Deployed alongside the git-tracked files
+# at DEPLOY_PATH/uploads/ on the Xserver host.
+uploads/*.mp4
